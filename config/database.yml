@@ -21,5 +21,8 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: trainer-assistant_production
+  username: trainer-assistant
+  password: <%= ENV['TRAINER_ASSISTANT_DATABASE_PASSWORD'] %>
