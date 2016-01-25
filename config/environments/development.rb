@@ -28,7 +28,7 @@ Rails.application.configure do
   }
   config.action_mailer.perform_deliveries = true # Set it to false to disable the email in dev mode
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default :charset => 'utf-8'
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

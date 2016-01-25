@@ -18,7 +18,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 gem 'puma'
-
+gem 'rake', '~> 10.5'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
