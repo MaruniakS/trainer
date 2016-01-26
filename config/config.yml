@@ -1,9 +1,0 @@
-development:
-  FACEBOOK_KEY: 975059882567005
-  FACEBOOK_SECRET: f1afb9efce350b2e7674c10a8a92aedd
-  FACEBOOK_CALLBACK: http://localhost:3000/users/auth/facebook/callback
-
-production:
-  FACEBOOK_KEY: 975059882567005
-  FACEBOOK_SECRET: f1afb9efce350b2e7674c10a8a92aedd
-  FACEBOOK_CALLBACK: https://trainer-assistant.herokuapp.com/users/auth/facebook/callback

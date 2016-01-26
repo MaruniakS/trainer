@@ -17,3 +17,6 @@
 /tmp
 **/.idea/workspace.xml
 **/.idea/tasks.xml
+
+# Ignore application configuration
+/config/application.yml
