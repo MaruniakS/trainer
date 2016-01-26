@@ -8,7 +8,6 @@ class Identity < ActiveRecord::Base
     identity = create(uid: auth.uid, provider: auth.provider) if identity.nil?
     identity.full_name = auth.info.name
     identity.email = auth.info.email
-    identity.nickname = auth.info.nickname
     identity.image = auth.info.image
     identity.save
     identity
