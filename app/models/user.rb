@@ -1,9 +1,7 @@
 class User < ActiveRecord::Base
   has_many :identities
   attr_accessor :login
-
   validates :username,
-            :presence => true,
             :uniqueness => {
                 :case_sensitive => false
             },

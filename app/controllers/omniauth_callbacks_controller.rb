@@ -6,9 +6,11 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def generic_callback( provider )
     @identity = Identity.find_for_oauth env['omniauth.auth']
 
-    @user = @identity.user || current_user
+    @user = User.find_by(email: @identity.email)
+
+    @user = @identity.user || current_user if @user.nil?
     if @user.nil?
-      @user = User.new(email: @identity.email || '' )
+      @user = User.new(email: @identity.email || '')
       @user.skip_confirmation!
       @user.save
       @identity.update_attribute( :user_id, @user.id )
