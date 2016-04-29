@@ -74,6 +74,53 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+        <% else %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+              <ul id="login-dp" class="dropdown-menu">
+                <li>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <%= form_for(resource, as: resource_name, url: session_path(resource_name), id:'login-nav')  do |f| %>
+
+
+                        <div class="form-group">
+                          <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                          <%= f.text_field :login, autofocus: true, class: 'form-control', placeholder: 'Username or email', required: true %>
+                        </div>
+                        <div class="form-group">
+                          <label class="sr-only" for="exampleInputPassword2">Password</label>
+                          <%= f.password_field :password, class: 'form-control', placeholder: 'Password', id: 'exampleInputPassword2', required: true  %>
+                        </div>
+                        <div class="help-block text-right">
+                          <%= link_to 'Forget the password?', new_password_path(resource_name) %>
+                        </div>
+                        <% if devise_mapping.rememberable? -%>
+                          <div class="checkbox">
+                            <label>
+                              <%= f.check_box :remember_me %> Remember me
+                            </label>
+                          </div>
+                        <% end -%>
+                        <div class="form-group">
+                          <%= f.submit 'Sign in', class: 'btn btn-primary btn-block'%>
+                        </div>
+                      <% end %>
+                      <div class="social-buttons">
+                        <%= link_to omniauth_authorize_path(resource_name, :facebook), class: 'btn btn-fb' do %>
+                            <i class="fa fa-facebook"></i> | Connect via Facebook
+                        <% end %>
+                      </div>
+                    </div>
+                    <div class="bottom text-center">
+                      New here ? <a href="#"><b>Join Us</b></a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+        <% end %>
         <li><a class="nav-link" href="#">Link</a></li>
         <li class="dropdown">
           <a  class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
