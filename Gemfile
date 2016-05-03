@@ -63,3 +63,9 @@ end
 
 # Server
 gem 'puma'
+# Paperclip for files attachments
+gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
+# Gem for administration
+gem 'rails_admin'
+# Cancancan for data managing
+gem 'cancancan'

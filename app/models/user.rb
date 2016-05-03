@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :identities
   attr_accessor :login
+
+  ROLES = %i[admin moderator trainer user banned]
+
   validates :username,
             :uniqueness => {
                 :case_sensitive => false
