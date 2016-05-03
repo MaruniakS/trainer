@@ -81,7 +81,7 @@
                 <div class="tab-pane active" id="groups">
                   <ul class="nav-list list-inline">
                     <% @muscle_groups.each do |group| %>
-                      <li><%= link_to group do %> <%= image_tag(group.image, class: 'nav-image') %> <span> <%= group.name %> </span> <% end %></li>
+                      <li><%= link_to group do %> <%= image_tag(group.image.url, class: 'nav-image') %> <span> <%= group.name %> </span> <% end %></li>
                     <% end %>
                   </ul>
                 </div>
@@ -92,6 +92,17 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+            <li class="dropdown">
+              <%= link_to current_user.username, root_path, class:'nav-link dropdown-toggle', 'data-toggle' => 'dropdown' %>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Signout', destroy_user_session_path, method: :delete %></li>
+
+              </ul>
+            </li>
         <% else %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
@@ -100,8 +111,6 @@
                   <div class="row">
                     <div class="col-md-12">
                       <%= form_for(resource, as: resource_name, url: session_path(resource_name), id:'login-nav')  do |f| %>
-
-
                         <div class="form-group">
                           <label class="sr-only" for="exampleInputEmail2">Email address</label>
                           <%= f.text_field :login, autofocus: true, class: 'form-control', placeholder: 'Username or email', required: true %>
@@ -139,16 +148,6 @@
             </li>
         <% end %>
         <li><a class="nav-link" href="#">Link</a></li>
-        <li class="dropdown">
-          <a  class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
