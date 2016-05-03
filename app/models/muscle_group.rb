@@ -3,7 +3,7 @@ class MuscleGroup < ActiveRecord::Base
                     :path => ':rails_root/public/system/:attachment/:id/:basename_:style.:extension',
                     :url => '/system/:attachment/:id/:basename_:style.:extension',
                     :styles => {
-                        :thumb    => ['100x100#',  :jpg, :quality => 70]
+                        :thumb    => ['100x100#',  :jpg, :quality => 100]
                     },
                     :convert_options => {
                         :thumb    => '-set colorspace sRGB -strip'
