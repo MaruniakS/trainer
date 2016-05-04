@@ -1,16 +1,18 @@
-<h2>Resend confirmation instructions</h2>
+<div class="modal-dialog">
+  <div class="loginmodal-container">
+    <h1>Resend confirmation instructions</h1><br>
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+        <% if flash[:alert] %>
+            <p class="alert alert-danger"> <%= devise_error_messages! %></p>
+        <% end %>
+        <div class="field">
+          <%= f.email_field :email, {autofocus: true, placeholder: 'Email ', class: 'text_input', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)} %>
+        </div>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %> 
+        <div class="actions">
+          <%= f.submit 'Resend confirmation instructions', {class: 'loginmodal-submit'} %>
+        </div>
+    <% end %>
+    <%= render "users/shared/links" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
