@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'home/index'
-
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -9,6 +8,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  # Root for exercises in muscle groups
+  get 'exercises/group/:id' => 'exercises#group', as: 'exercises_group'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :muscle_groups, only: [:index, :show]
+  resources :exercises, only: [:index, :show]
 
   # Example resource route with options:
   #   resources :products do
