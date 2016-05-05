@@ -65,12 +65,13 @@
 
 .loginmodal-submit {
   /* border: 1px solid #3079ed; */
-  border: 0px;
+  border: 0;
   color: #fff;
   text-shadow: 0 1px rgba(0,0,0,0.1);
   background-color: #4d90fe;
-  padding: 15px 0px;
+  padding: 15px 0;
   font-family: roboto;
+  border-radius: 4px;
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
@@ -94,4 +95,18 @@
 
 .login-help{
   font-size: 12px;
+}
+
+.facebook-button {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+  a {
+    opacity: 1;
+    color: #FFFFFF;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px 0;
+  }
 }
