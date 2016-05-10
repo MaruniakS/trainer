@@ -1,7 +1,7 @@
 class CreateExerciseDescriptions < ActiveRecord::Migration
   def change
     create_table :exercise_descriptions do |t|
-      t.text :title
+      t.text :step
       t.integer :order
       t.references :exercise, index: true
 

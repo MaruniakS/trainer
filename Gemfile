@@ -69,3 +69,6 @@ gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
 gem 'rails_admin'
 # Cancancan for data managing
 gem 'cancancan'
+
+# Permalink plugins for ActiveRecord
+gem 'friendly_id', '~> 5.1.0'

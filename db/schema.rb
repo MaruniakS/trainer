@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160505125800) do
 
   create_table "exercise_descriptions", force: :cascade do |t|
-    t.text     "title"
+    t.text     "step"
     t.integer  "order"
     t.integer  "exercise_id"
     t.datetime "created_at",  null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160505125800) do
 
   create_table "muscle_groups", force: :cascade do |t|
     t.string   "name"
+    t.text     "description"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"

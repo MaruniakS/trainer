@@ -1,4 +1,5 @@
 class ExerciseDescription < ActiveRecord::Base
   belongs_to :exercise
-  validates :title, presence: true, numericality: true
+  validates :step, presence: true
+  validates :order, numericality: true
 end
