@@ -1,35 +1,37 @@
-<div class="modal-dialog">
-  <div class="loginmodal-container">
-    <h1>Login to Your Account</h1><br>
-    <% if flash[:notice] %>
-        <p class="alert alert-success"><%= flash[:notice] %></p>
-    <% end %>
-    <% if flash[:alert] %>
-        <p class="alert alert-danger"><%= flash[:alert] %></p>
-    <% end %>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-          <%= f.text_field :login, {autofocus: true, placeholder: 'Username or email ', class: 'text_input'} %>
-        </div>
+<div class="container">
+  <div class="modal-form">
+    <div class="loginmodal-container">
+      <h1>Login to Your Account</h1><br>
+      <% if flash[:notice] %>
+          <p class="alert alert-success"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert] %>
+          <p class="alert alert-danger"><%= flash[:alert] %></p>
+      <% end %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.text_field :login, {autofocus: true, placeholder: 'Username or email ', class: 'text_input'} %>
+          </div>
 
-        <div class="field">
-          <%= f.password_field :password, {autocomplete: 'off', placeholder: 'Password', class: 'text_input'} %>
-        </div>
+          <div class="field">
+            <%= f.password_field :password, {autocomplete: 'off', placeholder: 'Password', class: 'text_input'} %>
+          </div>
 
-        <% if devise_mapping.rememberable? %>
-            <div class="field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
-        <% end %>
+          <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+          <% end %>
 
-        <div class="actions">
-          <%= f.submit 'Log in', {class: 'loginmodal-submit'} %>
-        </div>
-        <%= render 'users/shared/facebook' %>
-    <% end %>
+          <div class="actions">
+            <%= f.submit 'Log in', {class: 'loginmodal-submit'} %>
+          </div>
+          <%= render 'users/shared/facebook' %>
+      <% end %>
 
-    <%= render 'users/shared/links' %>
+      <%= render 'users/shared/links' %>
+    </div>
   </div>
 </div>
 
