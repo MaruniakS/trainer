@@ -96,8 +96,10 @@
         <% if user_signed_in? %>
             <li class="dropdown">
               <%= link_to current_user.username, root_path, class:'nav-link dropdown-toggle', 'data-toggle' => 'dropdown' %>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
+              <ul class="dropdown-menu" role="menu" data-no-turbolink="true">
+                <li>
+                  <%= link_to 'Особистий кабінет', personal_path(current_user) %>
+                </li>
                 <li><a href="#">Another action</a></li>
                 <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>
