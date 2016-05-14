@@ -1,6 +1,8 @@
 class Exercise < ActiveRecord::Base
   belongs_to :muscle_group
   has_many :exercise_descriptions, dependent: :destroy
+  has_many :training_day_exercises
+  has_many :training_days, through: :training_day_exercises
   validates :name, :muscle_group_id, presence: true
   validates :name, uniqueness: true
 

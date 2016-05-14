@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  program_type_id: 
+  description: MyText
+  first_day_id: 
+  second_day_id: 
+  third_day_id: 
+  fourth_day_id: 
+  fifth_day_id: 
+  sixth_day_id: 
+  seventh_day_id: 
+
+two:
+  name: MyString
+  program_type_id: 
+  description: MyText
+  first_day_id: 
+  second_day_id: 
+  third_day_id: 
+  fourth_day_id: 
+  fifth_day_id: 
+  sixth_day_id: 
+  seventh_day_id: 

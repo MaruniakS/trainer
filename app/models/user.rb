@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :identities
+  has_many :training_programs, foreign_key: :user_id
+  has_many :own_training_programs, class_name: 'TrainingProgram', foreign_key: :owner_id
   attr_accessor :login
   attr_accessor :roles
 
