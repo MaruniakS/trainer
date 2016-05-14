@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  # Root for exercises in muscle groups
+  # Route for exercises in muscle groups
   get 'exercises/group/:id' => 'exercises#group', as: 'exercises_group'
+
+  # Personal office
+  get 'users/:id/personal' => 'users#personal', as: 'personal'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
