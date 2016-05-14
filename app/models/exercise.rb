@@ -6,11 +6,11 @@ class Exercise < ActiveRecord::Base
   validates :name, :muscle_group_id, presence: true
   validates :name, uniqueness: true
 
-  has_attached_file :image,
+  has_attached_file :exercise_image,
                     :path => ':rails_root/public/system/:attachment/:id/:basename_:style.:extension',
                     :url => '/system/:attachment/:id/:basename_:style.:extension',
                     :default_url => '/images/no-image.jpg'
-  validates_attachment :image,
+  validates_attachment :exercise_image,
                        :size => { :in => 0..10.megabytes },
                        :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/ }
 

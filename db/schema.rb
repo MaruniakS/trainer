@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505125800) do
+ActiveRecord::Schema.define(version: 20160514134040) do
 
   create_table "exercise_descriptions", force: :cascade do |t|
     t.text     "step"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160505125800) do
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
+    t.string   "youtube_url"
     t.integer  "muscle_group_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -60,6 +61,60 @@ ActiveRecord::Schema.define(version: 20160505125800) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  create_table "program_types", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "training_day_exercises", force: :cascade do |t|
+    t.integer  "rest"
+    t.integer  "repetitions"
+    t.integer  "sets"
+    t.integer  "training_day_id"
+    t.integer  "exercise_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "training_day_exercises", ["exercise_id"], name: "index_training_day_exercises_on_exercise_id"
+  add_index "training_day_exercises", ["training_day_id"], name: "index_training_day_exercises_on_training_day_id"
+
+  create_table "training_days", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "training_programs", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "program_type_id"
+    t.text     "description"
+    t.integer  "first_day_id"
+    t.integer  "second_day_id"
+    t.integer  "third_day_id"
+    t.integer  "fourth_day_id"
+    t.integer  "fifth_day_id"
+    t.integer  "sixth_day_id"
+    t.integer  "seventh_day_id"
+    t.integer  "owner_id"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "training_programs", ["fifth_day_id"], name: "index_training_programs_on_fifth_day_id"
+  add_index "training_programs", ["first_day_id"], name: "index_training_programs_on_first_day_id"
+  add_index "training_programs", ["fourth_day_id"], name: "index_training_programs_on_fourth_day_id"
+  add_index "training_programs", ["owner_id"], name: "index_training_programs_on_owner_id"
+  add_index "training_programs", ["program_type_id"], name: "index_training_programs_on_program_type_id"
+  add_index "training_programs", ["second_day_id"], name: "index_training_programs_on_second_day_id"
+  add_index "training_programs", ["seventh_day_id"], name: "index_training_programs_on_seventh_day_id"
+  add_index "training_programs", ["sixth_day_id"], name: "index_training_programs_on_sixth_day_id"
+  add_index "training_programs", ["third_day_id"], name: "index_training_programs_on_third_day_id"
+  add_index "training_programs", ["user_id"], name: "index_training_programs_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

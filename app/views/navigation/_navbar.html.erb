@@ -83,7 +83,7 @@
                 <div class="tab-pane active" id="groups">
                   <ul class="nav-list list-inline">
                     <% @muscle_groups.each do |group| %>
-                      <li><%= link_to exercises_group_path(group) do %> <%= image_tag(group.image.url, class: 'nav-image') %> <span> <%= group.name %> </span> <% end %></li>
+                      <li><%= link_to exercises_group_path(group) do %> <%= image_tag(group.muscle_group_image.url, class: 'nav-image') %> <span> <%= group.name %> </span> <% end %></li>
                     <% end %>
                   </ul>
                 </div>
