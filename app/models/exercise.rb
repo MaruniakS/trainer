@@ -14,4 +14,11 @@ class Exercise < ActiveRecord::Base
 
   # Scopes
   scope :by_group, ->(group) {where(muscle_group_id: group)}
+
+  def steps(text)
+    steps = text.sentences
+    steps.each_with_index do |step, index|
+      ExerciseDescription.create(step: step, order: index+1, exercise: self)
+    end
+  end
 end
