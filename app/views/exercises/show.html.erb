@@ -1,3 +1,34 @@
-<div class="embed-container">
-  <%= embed(@exercise.youtube_url) %>
+<div class="container">
+  <div class="row text-center">
+    <h1 id="exercise-title">
+      <%= @exercise.name%>
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <%= image_tag(@exercise.exercise_image, class: 'exercise-image') %>
+      <h3> Опис </h3>
+      <p class="text-pre-line"><%= @exercise.description %></p>
+    </div>
+  </div>
+  <div class="row">
+    <h3> Техніка виконання </h3>
+    <ol>
+      <% @exercise.exercise_descriptions.each do |step| %>
+        <li>
+          <%= step.step %>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+  <div class="row">
+    <div class="col-sm-2 col-md-2 col-lg-2"></div>
+    <div class="cols-xs-12 col-sm-8 col-md-8 col-lg-8">
+      <div class="embed-container">
+        <%= embed(@exercise.youtube_url) %>
+      </div>
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2"></div>
+  </div>
 </div>
+
