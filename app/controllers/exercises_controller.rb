@@ -5,6 +5,9 @@ class ExercisesController < ApplicationController
 
   def show
     @exercise = Exercise.includes(:exercise_descriptions, :muscle_group).find(params[:id])
+    if @exercise
+      @analogs = @exercise.analogs
+    end
   end
 
   def group

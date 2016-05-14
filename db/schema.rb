@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514134040) do
+ActiveRecord::Schema.define(version: 20160514154803) do
+
+  create_table "exercise_analogs", force: :cascade do |t|
+    t.integer  "exercise_id"
+    t.integer  "analog_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "exercise_analogs", ["analog_id"], name: "index_exercise_analogs_on_analog_id"
+  add_index "exercise_analogs", ["exercise_id"], name: "index_exercise_analogs_on_exercise_id"
 
   create_table "exercise_descriptions", force: :cascade do |t|
     t.text     "step"

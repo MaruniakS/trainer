@@ -23,4 +23,16 @@ class Exercise < ActiveRecord::Base
       ExerciseDescription.create(step: step, order: index+1, exercise: self)
     end
   end
+
+  def analogs
+    exercises = []
+    analogs = ExerciseAnalog.where('exercise_id= (?) OR analog_id= (?)', self, self)
+    if analogs
+      analogs.each do |analog|
+        exercise = analog.exercise_id == self.id ? Exercise.find(analog.analog_id) : Exercise.find(analog.exercise_id)
+        exercises << exercise
+      end
+    end
+    exercises
+  end
 end
