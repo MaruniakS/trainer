@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2">
+    <div class="tabable">
+      <ul class="nav nav-pills nav-stacked">
+        <% active = false %>
+        <% @program.training_days.each_with_index  do |day, index| %>
+            <% if day.has_exercises? %>
+              <% if !active %>
+                <li class="active">
+                <% active = true %>
+              <% else %>
+                <li>
+              <% end %>
+                  <a data-toggle="tab" href="#day<%= index+1 %>">День <%= index+1 %></a>
+                </li>
+            <% else %>
+                <li class="disabled">
+                  <a href="#day<%= index+1 %>">День <%= index+1 %></a>
+                </li>
+            <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="col-xs-8 col-sm-10 col-md-10 col-lg-10 tab-content">
+    <% active = false %>
+    <% @program.training_days.each_with_index  do |day, index| %>
+      <div
+      <% if !active %>
+        <%= "id=day#{index+1}" %> class="tab-pane fade in active">
+        <% active = true %>
+      <% else %>
+        <%= "id=day#{index+1}"%> class="tab-pane fade">
+      <% end %>
+        <h3>
+          День <%= index+1 %>
+        </h3>
+      <% day.training_day_exercises.each do |exercise_day| %>
+        <%= link_to exercise_day.exercise, class: 'day-exercise-link' do %>
+          <div class="day-exercise-container row">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <%= image_tag(exercise_day.exercise.exercise_image.url) %>
+            </div>
+            <div class="day-exercise-content col-xs-9 col-sm-9 col-md-9 col-lg-9">
+              <h4>
+                <%= exercise_day.exercise.name %>
+              </h4>
+              <div>
+                <%= image_tag('common/sets.svg') %>
+                <p class="inline">Кількість підходів: <%= exercise_day.sets %></p>
+              </div>
+              <div>
+                <%= image_tag('common/repetitions.svg')%>
+                <p class="inline">Кількість повторів: <%= exercise_day.repetitions %></p>
+              </div>
+              <div>
+                <%= image_tag('common/rest.svg')%>
+                <p class="inline">Відпочинок між підходами: <%= exercise_day.rest %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+

@@ -96,5 +96,34 @@ $global-radius: 4px;
   }
 }
 
+.day-exercise-container{
+  border: 1px solid rgba(81, 203, 238, 1);
+  margin: 15px 5px;
+  div {
+    img {
+      max-height: 150px;
+    }
+  }
+   &:hover {
+     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+   }
+}
+
+
+.day-exercise-content{
+
+}
+.day-exercise-link{
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.inline {
+  display: inline-block;
+}
+
+
 
 
