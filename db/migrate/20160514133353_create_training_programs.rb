@@ -4,6 +4,7 @@ class CreateTrainingPrograms < ActiveRecord::Migration
       t.string :name
       t.references :program_type, index: true
       t.text :description
+      t.integer :body_type
       t.references :first_day, index: true
       t.references :second_day, index: true
       t.references :third_day, index: true

@@ -5,13 +5,10 @@ class TrainingProgram < ActiveRecord::Base
   [:first_day, :second_day, :third_day, :fourth_day, :fifth_day, :sixth_day, :seventh_day].each do |day|
     belongs_to day,  class_name: 'TrainingDay'
   end
-=begin
-  belongs_to :first_day, class_name: 'TrainingDay'
-  belongs_to :second_day, class_name: 'TrainingDay'
-  belongs_to :third_day, class_name: 'TrainingDay'
-  belongs_to :fourth_day, class_name: 'TrainingDay'
-  belongs_to :fifth_day, class_name: 'TrainingDay'
-  belongs_to :sixth_day, class_name: 'TrainingDay'
-  belongs_to :seventh_day, class_name: 'TrainingDay'
-=end
+  enum body_type: [:ectomorph, :mesomorph, :endomorph]
+
+  def training_days
+    ids = [first_day_id, second_day_id, third_day_id, fourth_day_id, fifth_day_id, sixth_day_id, seventh_day_id]
+    TrainingDay.where(id: ids)
+  end
 end

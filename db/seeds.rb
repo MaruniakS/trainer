@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-admin = User.new(username: 'admin', email: 'admin@gmail.com', password: 'insecure')
+admin = User.new(username: 'admin1', email: 'admin@gmail.com', password: 'insecure')
 admin.skip_confirmation!
 admin.save
 admin.roles = ['admin', 'user']
@@ -679,3 +679,34 @@ description = 'Сядьте на кінець лавки, впершись ст�
 Оскільки ця вправа скорочує косі м’язи живота, але виконується без того, що обтяжило, воно ущільнює м’язи, але не збільшує їх об’єм, що може візуально розширити область талії.'
 ex74.steps(description)
 
+# Programs
+
+pt1 = ProgramType.create(name: 'Набір маси')
+pt2 = ProgramType.create(name: 'Схуднення')
+pt3 = ProgramType.create(name: 'Збільшення сили')
+
+td1 = TrainingDay.create
+td2 = TrainingDay.create
+td3 = TrainingDay.create
+td4 = TrainingDay.create
+td5 = TrainingDay.create
+td6 = TrainingDay.create
+td7 = TrainingDay.create
+
+TrainingDayExercise.create(training_day: td1, exercise: ex60, rest: 1, sets: 4, repetitions: 8)
+TrainingDayExercise.create(training_day: td1, exercise: ex61, rest: 1, sets: 4, repetitions: 8)
+TrainingDayExercise.create(training_day: td1, exercise: ex52, rest: 1, sets: 4, repetitions: 10)
+TrainingDayExercise.create(training_day: td1, exercise: ex50, rest: 1, sets: 3, repetitions: 10)
+
+TrainingDayExercise.create(training_day: td3, exercise: ex20, rest: 1, sets: 4, repetitions: 8)
+TrainingDayExercise.create(training_day: td3, exercise: ex23, rest: 1, sets: 3, repetitions: 10)
+TrainingDayExercise.create(training_day: td3, exercise: ex22, rest: 1, sets: 3, repetitions: 10)
+TrainingDayExercise.create(training_day: td3, exercise: ex41, rest: 1, sets: 3, repetitions: 10)
+
+TrainingDayExercise.create(training_day: td5, exercise: ex5, rest: 1, sets: 4, repetitions: 10)
+TrainingDayExercise.create(training_day: td5, exercise: ex1, rest: 1, sets: 4, repetitions: 8)
+TrainingDayExercise.create(training_day: td5, exercise: ex2, rest: 1, sets: 3, repetitions: 10)
+TrainingDayExercise.create(training_day: td5, exercise: ex31, rest: 1, sets: 3, repetitions: 10)
+
+TrainingProgram.create(name: 'Набір маси', program_type: pt1, body_type: 1, first_day: td1,
+                       second_day: td2, third_day: td3, fourth_day: td4,fifth_day: td5, sixth_day: td6,seventh_day: td7)
