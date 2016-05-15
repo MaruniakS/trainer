@@ -8,6 +8,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'autoprefixer-rails'
 
+# Turbolinks
+gem 'jquery-turbolinks'
+
 # Font awesome
 gem 'font-awesome-rails'
 # Use Uglifier as compressor for JavaScript assets

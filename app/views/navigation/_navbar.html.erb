@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header " data-no-turbolink="true">
+    <div class="navbar-header ">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -73,10 +73,10 @@
           </div>
         </li>
         <li class="dropdown mega-dropdown">
-          <%= link_to exercises_path, class: 'nav-link dropdown-toggle  disabled', 'data-no-turbolink' => true, 'data-toggle' => 'dropdown', 'data-hover' => 'dropdown' do %>
+          <%= link_to exercises_path, class: 'nav-link dropdown-toggle  disabled', 'data-toggle' => 'dropdown', 'data-hover' => 'dropdown' do %>
             Excercises <span class="caret"></span>
           <% end %>
-          <div class="dropdown-menu mega-dropdown-menu " data-no-turbolink="true">
+          <div class="dropdown-menu mega-dropdown-menu ">
             <div class="container-fluid">
               <!-- Tab panes -->
               <div class="tab-content">
@@ -96,7 +96,7 @@
         <% if user_signed_in? %>
             <li class="dropdown">
               <%= link_to current_user.username, root_path, class:'nav-link dropdown-toggle', 'data-toggle' => 'dropdown' %>
-              <ul class="dropdown-menu" role="menu" data-no-turbolink="true">
+              <ul class="dropdown-menu" role="menu">
                 <li>
                   <%= link_to 'Особистий кабінет', personal_path(current_user) %>
                 </li>
