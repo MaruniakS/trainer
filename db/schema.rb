@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514185359) do
+ActiveRecord::Schema.define(version: 20160515110802) do
 
   create_table "exercise_analogs", force: :cascade do |t|
     t.integer  "exercise_id"
@@ -125,8 +125,12 @@ ActiveRecord::Schema.define(version: 20160514185359) do
     t.integer  "seventh_day_id"
     t.integer  "owner_id"
     t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "program_image_file_name"
+    t.string   "program_image_content_type"
+    t.integer  "program_image_file_size"
+    t.datetime "program_image_updated_at"
   end
 
   add_index "training_programs", ["fifth_day_id"], name: "index_training_programs_on_fifth_day_id"

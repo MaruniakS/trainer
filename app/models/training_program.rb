@@ -7,6 +7,14 @@ class TrainingProgram < ActiveRecord::Base
   end
   enum body_type: [:ectomorph, :mesomorph, :endomorph]
 
+  has_attached_file :program_image,
+                    :path => ':rails_root/public/system/:attachment/:id/:basename_:style.:extension',
+                    :url => '/system/:attachment/:id/:basename_:style.:extension',
+                    :default_url => '/images/no-image.jpg'
+  validates_attachment :program_image,
+                       :size => { :in => 0..10.megabytes },
+                       :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/ }
+
   def training_days
     ids = [first_day_id, second_day_id, third_day_id, fourth_day_id, fifth_day_id, sixth_day_id, seventh_day_id]
     TrainingDay.where(id: ids)

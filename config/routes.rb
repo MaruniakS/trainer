@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'programs/index'
+
+  get 'programs/show'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'home/index'
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
