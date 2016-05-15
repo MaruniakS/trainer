@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   def get_info
     @muscle_groups = MuscleGroup.all
+    @program_types = ProgramType.all
   end
 
   protected

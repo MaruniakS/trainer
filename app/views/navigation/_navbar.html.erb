@@ -19,62 +19,27 @@
         <li><a class="nav-link" href="#">Link</a></li>
         <li><a class="nav-link" href="#">Link</a></li>
         <li class="dropdown mega-dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <div class="dropdown-menu mega-dropdown-menu">
+          <%= link_to exercises_path, class: 'nav-link dropdown-toggle  disabled', 'data-toggle' => 'dropdown', 'data-hover' => 'dropdown' do %>
+              Програми <span class="caret"></span>
+          <% end %>
+          <div class="dropdown-menu mega-dropdown-menu ">
             <div class="container-fluid">
               <!-- Tab panes -->
               <div class="tab-content">
-                <div class="tab-pane active" id="men">
+                <div class="tab-pane active" id="groups">
                   <ul class="nav-list list-inline">
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-                  </ul>
-                </div>
-                <div class="tab-pane" id="women">
-                  <ul class="nav-list list-inline">
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                  </ul>
-                </div>
-                <div class="tab-pane" id="kids">
-                  <ul class="nav-list list-inline">
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-                  </ul>
-                </div>
-                <div class="tab-pane" id="sports">
-                  <ul class="nav-list list-inline">
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
+                    <% @program_types.each do |type| %>
+                        <li><%= link_to root_path do %> <span> <%= type.name %> </span> <% end %></li>
+                    <% end %>
                   </ul>
                 </div>
               </div>
             </div>
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-              <li class="active"><a href="#men" role="tab" data-toggle="tab">Men</a></li>
-              <li><a href="#women" role="tab" data-toggle="tab">Women</a></li>
-              <li><a href="#kids" role="tab" data-toggle="tab">Kids</a></li>
-              <li><a href="#sports" role="tab" data-toggle="tab">Sports</a></li>
-            </ul>
           </div>
         </li>
         <li class="dropdown mega-dropdown">
           <%= link_to exercises_path, class: 'nav-link dropdown-toggle  disabled', 'data-toggle' => 'dropdown', 'data-hover' => 'dropdown' do %>
-            Excercises <span class="caret"></span>
+            Вправи <span class="caret"></span>
           <% end %>
           <div class="dropdown-menu mega-dropdown-menu ">
             <div class="container-fluid">
