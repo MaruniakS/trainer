@@ -5,6 +5,14 @@
     </h1>
   </div>
   <div class="row">
+    <%= form_tag(program_filter_path, method: :get,  remote: true) do %>
+      <%= select_tag :program_type, options_from_collection_for_select(@program_types, 'id', 'name'), {include_blank: 'Будь-який'} %>
+      <%= select_tag :male_type, options_for_select(@male_types), {include_blank: 'Будь-який'}%>
+      <%= select_tag :body_type, options_for_select(@body_types), {include_blank: 'Будь-який'}%>
+      <%= submit_tag %>
+    <% end %>
+  </div>
+  <div class="row">
     <% @programs.each do |program| %>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
           <div class="image-wrapper overlay-fade-in">

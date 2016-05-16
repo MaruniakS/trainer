@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   # Personal office
   get 'users/:id/personal' => 'users#personal', as: 'personal'
 
+  # Programs filter
+  get 'programs/filter' => 'programs#filter', as: 'program_filter'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

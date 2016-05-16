@@ -708,5 +708,5 @@ TrainingDayExercise.create(training_day: td5, exercise: ex1, rest: 1, sets: 4, r
 TrainingDayExercise.create(training_day: td5, exercise: ex2, rest: 1, sets: 3, repetitions: 10)
 TrainingDayExercise.create(training_day: td5, exercise: ex31, rest: 1, sets: 3, repetitions: 10)
 
-TrainingProgram.create(name: 'Набір маси', program_type: pt1, body_type: 1, first_day: td1,
+TrainingProgram.create(name: 'Набір маси', program_type: pt1, body_type: 0, male_type: 0, first_day: td1,
                        second_day: td2, third_day: td3, fourth_day: td4,fifth_day: td5, sixth_day: td6,seventh_day: td7, user: admin)

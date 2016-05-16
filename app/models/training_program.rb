@@ -1,4 +1,5 @@
 class TrainingProgram < ActiveRecord::Base
+  include Filterable
   belongs_to :program_type
   belongs_to :user
   belongs_to :template, class_name: 'TrainingProgram'
@@ -6,7 +7,7 @@ class TrainingProgram < ActiveRecord::Base
   [:first_day, :second_day, :third_day, :fourth_day, :fifth_day, :sixth_day, :seventh_day].each do |day|
     belongs_to day,  class_name: 'TrainingDay'
   end
-  enum body_type: [:ectomorph, :mesomorph, :endomorph]
+  enum body_type: ['Ектоморф', 'Мезоморф', 'Ендоморф']
 
   has_attached_file :program_image,
                     :path => ':rails_root/public/system/:attachment/:id/:basename_:style.:extension',
@@ -15,6 +16,12 @@ class TrainingProgram < ActiveRecord::Base
   validates_attachment :program_image,
                        :size => { :in => 0..10.megabytes },
                        :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/ }
+
+  # Scopes
+  scope :body_type, -> (body_type) { where body_type: body_type }
+  scope :male_type, -> (male_type) { where male_type: male_type }
+  scope :program_type, -> (program_type) {  where program_type: program_type}
+
 
   def training_days
     ids = [first_day_id, second_day_id, third_day_id, fourth_day_id, fifth_day_id, sixth_day_id, seventh_day_id]

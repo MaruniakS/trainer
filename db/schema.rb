@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(version: 20160515110802) do
     t.integer  "program_type_id"
     t.text     "description"
     t.integer  "body_type"
+    t.integer  "male_type"
     t.integer  "first_day_id"
     t.integer  "second_day_id"
     t.integer  "third_day_id"

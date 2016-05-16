@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   before_create :set_default_role
 
   ROLES = %i[admin moderator trainer user banned]
+  enum male_type: %w(Чоловік Жінка)
   friendly_id :username, use: :slugged
   validates :username,
             :uniqueness => {
