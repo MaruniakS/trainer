@@ -1,0 +1,12 @@
+<% programs.each do |program| %>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="image-wrapper overlay-fade-in">
+        <%= image_tag(program.program_image.url) %>
+        <div class="image-overlay-content">
+          <h2>.overlay-fade-in</h2>
+          <p class="price">$99.99</p>
+          <%= link_to 'Get it', program_path(program), class: 'button' %>
+        </div>
+      </div>
+    </div>
+<% end %>

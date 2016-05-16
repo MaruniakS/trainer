@@ -10,11 +10,9 @@ class ProgramsController < ApplicationController
   end
 
   def filter
-    puts '*'*100
-    puts params
-    puts '*'*100
     @programs = TrainingProgram.filter(params.slice(:body_type, :program_type, :male_type))
-    puts '*'*100
-    puts @programs
+    respond_to do |format|
+      format.js
+    end
   end
 end
