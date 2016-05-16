@@ -12,7 +12,7 @@ class CreateTrainingPrograms < ActiveRecord::Migration
       t.references :fifth_day, index: true
       t.references :sixth_day, index: true
       t.references :seventh_day, index: true
-      t.references :owner, index: true
+      t.references :template, index: true
       t.references :user, index: true
 
       t.timestamps null: false
@@ -25,7 +25,7 @@ class CreateTrainingPrograms < ActiveRecord::Migration
     add_foreign_key :training_programs, :fifth_days
     add_foreign_key :training_programs, :sixth_days
     add_foreign_key :training_programs, :seventh_days
-    add_foreign_key :training_programs, :owners
+    add_foreign_key :training_programs, :templates
     add_foreign_key :training_programs, :users
   end
 end

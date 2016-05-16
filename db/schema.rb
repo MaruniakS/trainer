@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 20160515110802) do
     t.integer  "fifth_day_id"
     t.integer  "sixth_day_id"
     t.integer  "seventh_day_id"
-    t.integer  "owner_id"
+    t.integer  "template_id"
     t.integer  "user_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
@@ -136,11 +136,11 @@ ActiveRecord::Schema.define(version: 20160515110802) do
   add_index "training_programs", ["fifth_day_id"], name: "index_training_programs_on_fifth_day_id"
   add_index "training_programs", ["first_day_id"], name: "index_training_programs_on_first_day_id"
   add_index "training_programs", ["fourth_day_id"], name: "index_training_programs_on_fourth_day_id"
-  add_index "training_programs", ["owner_id"], name: "index_training_programs_on_owner_id"
   add_index "training_programs", ["program_type_id"], name: "index_training_programs_on_program_type_id"
   add_index "training_programs", ["second_day_id"], name: "index_training_programs_on_second_day_id"
   add_index "training_programs", ["seventh_day_id"], name: "index_training_programs_on_seventh_day_id"
   add_index "training_programs", ["sixth_day_id"], name: "index_training_programs_on_sixth_day_id"
+  add_index "training_programs", ["template_id"], name: "index_training_programs_on_template_id"
   add_index "training_programs", ["third_day_id"], name: "index_training_programs_on_third_day_id"
   add_index "training_programs", ["user_id"], name: "index_training_programs_on_user_id"
 
