@@ -15,4 +15,14 @@ class ProgramsController < ApplicationController
       format.js
     end
   end
+
+  def assign_to_user
+    @program = TrainingProgram.find(params[:program])
+    if !current_user.has_program? @program
+      @program.duplicate_program(current_user)
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
 end

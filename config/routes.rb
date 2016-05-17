@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   # Programs filter
   get 'programs/filter' => 'programs#filter', as: 'program_filter'
 
+  # Add program
+  get 'programs/assign_to_user' => 'programs#assign_to_user', as: 'assign_program'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

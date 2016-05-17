@@ -1,0 +1,5 @@
+<% if user_signed_in? %>
+    <% if !current_user.has_program?(@program) %>
+        <%= link_to 'Add program', assign_program_path(program: @program), remote: true %>
+    <% end %>
+<% end %>

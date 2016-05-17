@@ -28,10 +28,11 @@ class TrainingProgram < ActiveRecord::Base
     TrainingDay.where(id: ids)
   end
 
-  def clone(user)
+  def duplicate_program(user)
     program = self.dup
     program.user = user
     program.template = self
     program.save
+    program
   end
 end

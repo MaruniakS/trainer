@@ -39,6 +39,10 @@ class User < ActiveRecord::Base
     roles.include?(role)
   end
 
+  def has_program?(program)
+    TrainingProgram.where(user: self).where('id= (?) OR template_id= (?)', program.id, program.id).empty? ? false : true
+  end
+
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
