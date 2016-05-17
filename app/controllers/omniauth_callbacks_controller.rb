@@ -11,6 +11,17 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = @identity.user || current_user if @user.nil?
     if @user.nil?
       @user = User.new(email: @identity.email || '')
+      i = 0
+      size = User.all.count
+      while true
+        name = "unnamed_user#{size+i}"
+        if User.where(username: name).empty?
+          @user.username = name
+          break
+        else
+          i+=1
+        end
+      end
       @user.skip_confirmation!
       @user.save
       @identity.update_attribute( :user_id, @user.id )
