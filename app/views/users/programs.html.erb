@@ -1,0 +1,11 @@
+<div class="container main-container">
+  <% @programs.each do |program| %>
+    <div class="row">
+      <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+        <%= link_to user_program_path(current_user, program) do %>
+            <%= image_tag(program.program_image.url) %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

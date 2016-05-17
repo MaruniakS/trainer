@@ -1,5 +1,6 @@
 class TrainingProgram < ActiveRecord::Base
   include Filterable
+  include TrainingProgramGenerator
   belongs_to :program_type
   belongs_to :user
   belongs_to :template, class_name: 'TrainingProgram'
@@ -34,5 +35,12 @@ class TrainingProgram < ActiveRecord::Base
     program.template = self
     program.save
     program
+  end
+
+  def delete_program
+    self.training_days.each do |day|
+      day.destroy
+    end
+    self.destroy
   end
 end

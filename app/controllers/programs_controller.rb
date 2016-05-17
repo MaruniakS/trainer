@@ -25,4 +25,12 @@ class ProgramsController < ApplicationController
       format.js
     end
   end
+
+  def programs
+    @programs = current_user.training_programs
+  end
+
+  def program
+    @program = TrainingProgram.find(params[:id])
+  end
 end
