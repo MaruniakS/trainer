@@ -1,0 +1,5 @@
+<% day.training_day_exercises.each do |exercise|%>
+    <div class="edit-exercise-container">
+      <%= render partial: 'training_day_exercise', locals: {exercise: exercise} %>
+    </div>
+<% end %>

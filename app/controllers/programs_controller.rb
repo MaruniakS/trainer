@@ -9,6 +9,10 @@ class ProgramsController < ApplicationController
     @program = TrainingProgram.find(params[:id])
   end
 
+  def edit
+    @program = TrainingProgram.find(params[:id])
+  end
+
   def filter
     @programs = TrainingProgram.filter(params.slice(:body_type, :program_type, :male_type))
     respond_to do |format|

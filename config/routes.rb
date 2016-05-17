@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   # User programs
   get 'users/:id/programs' => 'programs#programs', as: 'user_programs'
   get 'users/:id/programs/:id' => 'programs#program', as: 'user_program'
+  get 'users/:id/programs/:id/edit' => 'programs#edit', as: 'edit_program'
 
   # Programs filter
   get 'programs/filter' => 'programs#filter', as: 'program_filter'
