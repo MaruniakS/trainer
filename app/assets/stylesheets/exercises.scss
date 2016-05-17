@@ -36,8 +36,11 @@
 .muscle-group-container {
   margin: 10px 0;
   border: solid 1px rgba(81, 203, 238, 1);
-  border-radius: 0 0 30px 30px;
+  border-radius: 50px;
   text-align: center;
+  img {
+    border-radius: 50px;
+  }
   &:hover {
     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
   }
