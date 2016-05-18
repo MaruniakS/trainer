@@ -36,5 +36,6 @@ class ProgramsController < ApplicationController
 
   def program
     @program = TrainingProgram.find(params[:id])
+    render action: 'show'
   end
 end

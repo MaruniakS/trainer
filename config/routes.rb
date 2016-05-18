@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'training_days/edit'
+
+  get 'training_days/update'
+
   get 'programs/index'
 
   get 'programs/show'
@@ -39,6 +43,7 @@ Rails.application.routes.draw do
   #   resources :products
   resources :exercises, only: [:index, :show]
   resources :programs, only: [:index, :show]
+  resources :training_days
 
   # Example resource route with options:
   #   resources :products do
