@@ -28,4 +28,12 @@ class TrainingDaysController < ApplicationController
       render template: 'programs/js_refresh/exercise_not_edited'
     end
   end
+
+  def delete_exercise
+    exercise = TrainingDayExercise.find(params[:id])
+    @tday = exercise.training_day
+    @exercises = Exercise.all
+    exercise.destroy
+    render template: 'programs/js_refresh/exercise_deleted'
+  end
 end

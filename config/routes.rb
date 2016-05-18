@@ -51,6 +51,9 @@ Rails.application.routes.draw do
   # Edit exercise
   get 'training_days/:id/change_exercise' => 'training_days#change_exercise', as: 'change_exercise'
 
+  # Delete exercise from training day
+  delete 'training_days/:id/delete_exercise' => 'training_days#delete_exercise', as: 'delete_exercise'
+
   # Example resource route with options:
   #   resources :products do
   #     member do

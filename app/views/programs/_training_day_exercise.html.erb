@@ -6,6 +6,7 @@
 
 </div>
 <%= link_to 'Edit exercise',  '#', 'data-target' => "#myModal_exercise#{day_exercise.id}", 'data-toggle' => 'modal'  %>
+<%= link_to 'Delete exercise', delete_exercise_path(day_exercise.id), method: :delete, data: {confirm: 'Видалити вправу?'}, remote: true %>
 <div class="modal fade" id='<%= "myModal_exercise#{day_exercise.id}" %>' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
