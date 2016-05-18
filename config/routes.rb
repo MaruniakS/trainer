@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  get 'training_days/edit'
-
-  get 'training_days/update'
-
-  get 'programs/index'
-
-  get 'programs/show'
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'home/index'
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
@@ -20,18 +12,24 @@ Rails.application.routes.draw do
   get 'exercises/group/:id' => 'exercises#group', as: 'exercises_group'
 
   # Personal office
-  get 'users/:id/personal' => 'users#personal', as: 'personal'
+  #get 'users/:id/personal' => 'users#personal', as: 'personal'
 
   # User programs
-  get 'users/:id/programs' => 'programs#programs', as: 'user_programs'
-  get 'users/:id/programs/:id' => 'programs#program', as: 'user_program'
-  get 'users/:id/programs/:id/edit' => 'programs#edit', as: 'edit_program'
+  #get 'users/:id/programs' => 'programs#programs', as: 'user_programs'
+  #get 'users/:id/programs/:id' => 'programs#program', as: 'user_program'
+  #get 'users/:id/programs/:id/edit' => 'programs#edit', as: 'edit_program'
 
   # Programs filter
   get 'programs/filter' => 'programs#filter', as: 'program_filter'
 
   # Add program
   get 'programs/assign_to_user' => 'programs#assign_to_user', as: 'assign_program'
+
+  # All programs
+  get '/programs' => 'programs#all_programs', as: 'all_programs'
+
+  # Single program
+  get '/programs/:id' => 'programs#common_program', as: 'common_program'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -42,7 +40,9 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :exercises, only: [:index, :show]
-  resources :programs, only: [:index, :show]
+  resources :users, only: [:show] do
+    resources :programs
+  end
   resources :training_days
 
   # Example resource route with options:

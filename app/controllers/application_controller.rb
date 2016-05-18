@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+  def check_user
+    redirect_to root_path , flash: {error: 'You can login only to your profile!'} if !user_signed_in?
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me, roles: ['user']) }
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :username, :email, :password, :remember_me) }

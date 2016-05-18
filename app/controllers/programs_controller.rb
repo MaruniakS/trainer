@@ -1,8 +1,8 @@
 class ProgramsController < ApplicationController
+  before_action :check_user, only: [:index]
   def index
-    @programs = TrainingProgram.all
-    @body_types = TrainingProgram.body_types
-    @male_types = User.male_types
+    @user = current_user
+    @programs = @user.training_programs
   end
 
   def show
@@ -30,11 +30,13 @@ class ProgramsController < ApplicationController
     end
   end
 
-  def programs
-    @programs = current_user.training_programs
+  def all_programs
+    @programs = TrainingProgram.all
+    @body_types = TrainingProgram.body_types
+    @male_types = User.male_types
   end
 
-  def program
+  def common_program
     @program = TrainingProgram.find(params[:id])
     render action: 'show'
   end
