@@ -1,0 +1,17 @@
+<%= form_tag(change_exercise_path(day_exercise: day_exercise), method: :get, remote: true) do %>
+    <% if !errors.nil? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(errors.count, "error") %> prohibited this exercise from being changed:</h2>
+          <ul>
+            <% errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <%= text_field_tag :rest, day_exercise.rest, placeholder: 'Rest time' %>
+    <%= text_field_tag :sets, day_exercise.sets, placeholder: 'Sets' %>
+    <%= text_field_tag :repetitions, day_exercise.repetitions,  placeholder: 'Repetitions' %>
+    <%= select_tag :exercise, options_from_collection_for_select(exercises, 'id', 'name')%>
+    <%= submit_tag %>
+<% end %>

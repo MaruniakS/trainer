@@ -43,7 +43,13 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :programs
   end
-  resources :training_days
+
+  # Edit program
+  # Add exercise
+  get 'training_days/:id/edit' => 'training_days#edit', as: 'edit_training_day'
+
+  # Edit exercise
+  get 'training_days/:id/change_exercise' => 'training_days#change_exercise', as: 'change_exercise'
 
   # Example resource route with options:
   #   resources :products do

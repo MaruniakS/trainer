@@ -1,7 +1,4 @@
 class TrainingDaysController < ApplicationController
-  def show
-  end
-
   def edit
     @tday = TrainingDay.find(params[:day])
     exercise = Exercise.find(params[:exercise])
@@ -13,6 +10,22 @@ class TrainingDaysController < ApplicationController
     else
       @errors = tday_exercise.errors
       render template: 'programs/js_refresh/exercise_not_save'
+    end
+  end
+
+  def change_exercise
+    @exercise = TrainingDayExercise.find(params[:day_exercise])
+    ex = Exercise.find(params[:exercise])
+    @exercises = Exercise.all
+    @exercise.rest = params[:rest]
+    @exercise.sets = params[:sets]
+    @exercise.repetitions = params[:repetitions]
+    @exercise.exercise = ex
+    if @exercise.save
+      render template: 'programs/js_refresh/exercise_edited'
+    else
+      @errors = @exercise.errors
+      render template: 'programs/js_refresh/exercise_not_edited'
     end
   end
 end

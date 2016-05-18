@@ -1,1 +1,25 @@
-<%= exercise.exercise.name %>
+<div class="exercise">
+  <%= day_exercise.exercise.name %>
+  <%= day_exercise.rest %>
+  <%= day_exercise.sets %>
+  <%= day_exercise.repetitions %>
+
+</div>
+<%= link_to 'Edit exercise',  '#', 'data-target' => "#myModal_exercise#{day_exercise.id}", 'data-toggle' => 'modal'  %>
+<div class="modal fade" id='<%= "myModal_exercise#{day_exercise.id}" %>' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add exercise</h4>
+      </div>
+      <div class="modal-body">
+        <%= render partial: 'programs/partials/edit_exercise_form', locals: {day_exercise: day_exercise, errors: nil, exercises: @exercises} %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

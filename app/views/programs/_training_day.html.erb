@@ -4,8 +4,8 @@
     </div>
 <% else %>
     <% day.training_day_exercises.each do |exercise|%>
-        <div class="edit-exercise-container">
-          <%= render partial: 'programs/training_day_exercise', locals: {exercise: exercise} %>
+        <div class="edit-exercise-container" id="<%="ex_#{exercise.id}"%>">
+          <%= render partial: 'programs/training_day_exercise', locals: {day_exercise: exercise} %>
         </div>
     <% end %>
 <% end %>
