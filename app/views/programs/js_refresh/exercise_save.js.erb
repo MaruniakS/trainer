@@ -1,0 +1,4 @@
+$("<%= "#myModal_#{@tday.id}" %>").hide();
+$('body').removeClass('modal-open');
+$('.modal-backdrop').remove();
+$("<%= "#day#{@tday.id}" %>").html("<%= escape_javascript(render partial: 'programs/training_day', locals: { day: @tday, exercises: @exercises} ) %>");

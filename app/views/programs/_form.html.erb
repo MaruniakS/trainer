@@ -1,3 +1,18 @@
-<%= form_tag(edit_training_day_path(day: day), remote: true) do |f| %>
+<%= form_tag(edit_training_day_path(day: day), method: :get, remote: true) do %>
+    <% if !errors.nil? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(errors.count, "error") %> prohibited this exercise from being saved:</h2>
+
+          <ul>
+            <% errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <%= text_field_tag :rest, nil, placeholder: 'Rest time' %>
+    <%= text_field_tag :sets, nil, placeholder: 'Rest time' %>
+    <%= text_field_tag :repetitions, nil,  placeholder: 'Rest time' %>
+    <%= select_tag :exercise, options_from_collection_for_select(exercises, 'id', 'name')%>
     <%= submit_tag %>
 <% end %>

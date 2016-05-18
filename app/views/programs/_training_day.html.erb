@@ -5,7 +5,7 @@
 <% else %>
     <% day.training_day_exercises.each do |exercise|%>
         <div class="edit-exercise-container">
-          <%= render partial: 'training_day_exercise', locals: {exercise: exercise} %>
+          <%= render partial: 'programs/training_day_exercise', locals: {exercise: exercise} %>
         </div>
     <% end %>
 <% end %>
@@ -18,7 +18,7 @@
         <h4 class="modal-title" id="myModalLabel">Add exercise</h4>
       </div>
       <div class="modal-body">
-        <%= render 'form', day: day %>
+        <%= render partial: 'programs/form', locals: {day: day, errors: nil, exercises: @exercises} %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

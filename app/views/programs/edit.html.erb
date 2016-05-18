@@ -1,6 +1,6 @@
 <div class="container main-container">
   <% @program.training_days.each do |day|%>
-    <div class="edit-day-container">
+    <div class="edit-day-container" id= <%="day#{day.id}"%>>
       <%= render partial: 'training_day', locals: {day: day} %>
     </div>
   <% end %>
