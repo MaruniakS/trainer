@@ -1,17 +1,18 @@
 <%= render 'carousel'%>
 <a  name="services"></a>
 <div class="content-section-a">
-
   <div class="container">
     <div class="row">
       <div class="col-lg-5 col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
-        <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-        <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+        <h2 class="section-heading"> Готові програми тренувань </h2>
+        <p class="lead">Хочеш набрати м’язеву масу або скинути зайву вагу, але не знаєш, як скласти програму тренувань?
+          Вибери готову програму залежно від поставленої мети. </p>
+        <%= link_to 'Вибрати','#', class: 'btn btn-lg square-btn' %>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-        <img class="img-responsive" src="img/ipad.png" alt="">
+        <%= image_tag('carousel/title-picture-1.jpg', class: 'img-responsive') %>
       </div>
     </div>
 
@@ -29,11 +30,12 @@
       <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
-        <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-        <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+        <h2 class="section-heading"> Індивідуальна програма тренувань </h2>
+        <p class="lead"> Отримай програму на основі індивідуальних даних, що враховує  особливості організму та рівень підготовленості. </p>
+        <%= link_to 'Отримати','#', class: 'btn btn-lg square-btn' %>
       </div>
       <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-        <img class="img-responsive" src="img/dog.png" alt="">
+        <%= image_tag('main/work-out-1.png', class: 'img-responsive') %>
       </div>
     </div>
 
@@ -51,8 +53,9 @@
       <div class="col-lg-5 col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
-        <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-        <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+        <h2 class="section-heading">Відстежуй прогрес</h2>
+        <p class="lead"> Заводь щоденник прогресу в особистому кабінеті для спостереженя за результатами тренувань. Став перед собою нові цілі та досягай їх! </p>
+        <%= link_to 'Завести','#', class: 'btn btn-lg square-btn' %>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
         <img class="img-responsive" src="img/phones.png" alt="">
@@ -64,3 +67,81 @@
 
 </div>
 <!-- /.content-section-a -->
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">About</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="timeline">
+          <li>
+            <div class="timeline-image">
+              <%= image_tag('main/work-out-1.png', class: 'img-circle img-responsive')%>
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4></h4>
+                <h4 class="subheading">Зареєструйся</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted"> Створи особистий обліковий запис, використовуючи поштову скриньку або соціальну мережу Faceebook</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image">
+              <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4></h4>
+                <h4 class="subheading"> Підбери план тренувань </h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted"> Вибери готову, отримай індивідуальну, створену на основі особистих даних, або створи власну програму </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-image">
+              <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4></h4>
+                <h4 class="subheading">Організуй тренувальний процес</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted"> Розпиши календар тренувань, щоб не пропустити заняття та отримувати сповіщення </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image">
+              <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4></h4>
+                <h4 class="subheading"> Відслідковуй прогрес </h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted"> Періодично проводь заміри свого тіла та спостерігай за змінами</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image">
+              <h4> Розпочни
+                <br> зараз </h4>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
