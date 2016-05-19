@@ -150,6 +150,10 @@ body {
   border-top: 3px solid rgb(255, 0, 0);
 }
 
+#about {
+ padding-bottom: 30px;
+}
+
 .timeline {
   list-style: none;
   padding: 0;
@@ -320,4 +324,8 @@ body {
 
 #time-line-1 .image-align {
   background-image: asset-url('main/content-image-1');
+}
+
+#time-line-2 .image-align {
+  background-image: asset-url('main/training-diary1');
 }

@@ -13,7 +13,9 @@
         <div class="carousel-caption">
           <h1>Personal Fitness Trainer</h1>
           <p> Особистий асистент для занять у спортивному залі </p>
-          <p><a class="btn btn-lg carousel-button" href="https://getbootstrap.com/examples/carousel/#" role="button"> Розпочни сьогодні </a></p>
+          <p>
+            <%= link_to 'Розпочни сьогодні', new_user_registration_path, class:'btn btn-lg carousel-button', role: 'button' %>
+          </p>
         </div>
       </div>
     </div>
@@ -22,7 +24,9 @@
         <div class="carousel-caption">
           <h1> Програми тренувань </h1>
           <p> Займайся за програмами відомих спортсменів </p>
-          <p><a class="btn btn-lg carousel-button" href="https://getbootstrap.com/examples/carousel/#" role="button"> Вибрати програму </a></p>
+          <p>
+            <%= link_to 'Вибрати програму', all_programs_path, class:'btn btn-lg carousel-button', role: 'button' %>
+          </p>
         </div>
       </div>
     </div>
@@ -31,7 +35,9 @@
         <div class="carousel-caption">
           <h1> Щоденник прогресу </h1>
           <p> Слідкуй за своїм прогресом, проводячи заміри та відслідковуючи різницю</p>
-          <p><a class="btn btn-lg carousel-button" href="https://getbootstrap.com/examples/carousel/#" role="button"> Завести щоденник </a></p>
+          <p>
+            <%= link_to 'Завести щоденник', all_programs_path, class:'btn btn-lg carousel-button', role: 'button' %>
+          </p>
         </div>
       </div>
     </div>
