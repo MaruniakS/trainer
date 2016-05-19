@@ -3,7 +3,7 @@
 <div class="content-section-a">
   <div class="container">
     <div class="row">
-      <div class="col-lg-5 col-sm-6">
+      <div id="main-content-1" class="col-lg-5 col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
         <h2 class="section-heading"> Готові програми тренувань </h2>
@@ -12,7 +12,7 @@
         <%= link_to 'Вибрати','#', class: 'btn btn-lg square-btn' %>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-        <%= image_tag('carousel/title-picture-1.jpg', class: 'img-responsive') %>
+        <%= image_tag('carousel/title-picture-1.jpg', class: 'img-responsive', id: 'content-image-1') %>
       </div>
     </div>
 
@@ -27,7 +27,7 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+      <div id="main-content-2" class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
         <h2 class="section-heading"> Індивідуальна програма тренувань </h2>
@@ -35,7 +35,7 @@
         <%= link_to 'Отримати','#', class: 'btn btn-lg square-btn' %>
       </div>
       <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-        <%= image_tag('main/work-out-1.png', class: 'img-responsive') %>
+        <%= image_tag('main/work-out-1.png', class: 'img-responsive', id: 'content-image-2') %>
       </div>
     </div>
 
@@ -50,7 +50,7 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-lg-5 col-sm-6">
+      <div id="main-content-3" class="col-lg-5 col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
         <h2 class="section-heading">Відстежуй прогрес</h2>
@@ -58,7 +58,7 @@
         <%= link_to 'Завести','#', class: 'btn btn-lg square-btn' %>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-        <img class="img-responsive" src="img/phones.png" alt="">
+        <%= image_tag('carousel/title-picture-1.jpg', class: 'img-responsive', id: 'content-image-3') %>
       </div>
     </div>
 

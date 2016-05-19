@@ -64,6 +64,13 @@ group :production do
   gem 'rails_12factor'
 end
 
+# Animation.css
+gem 'animate-rails'
+
+# Waypoints
+gem 'jquery-waypoints-rails'
+#gem 'jquery-waypoints-rails', '~> 2.0', '>= 2.0.5'
+
 # Server
 gem 'puma'
 # Paperclip for files attachments

@@ -47,6 +47,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    animate-rails (1.0.10)
+      rails
     arel (6.0.3)
     autoprefixer-rails (6.0.3)
       execjs
@@ -108,6 +110,8 @@ GEM
       turbolinks
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
+    jquery-waypoints-rails (2.0.5)
+      rails (>= 3.1.0)
     json (1.8.3)
     jwt (1.5.2)
     kaminari (0.16.3)
@@ -241,6 +245,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  animate-rails
   autoprefixer-rails
   bootstrap-sass (~> 3.3, >= 3.3.6)
   byebug
@@ -253,6 +258,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  jquery-waypoints-rails
   omniauth
   omniauth-facebook
   paperclip!
