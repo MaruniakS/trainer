@@ -2,17 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$global-radius: 4px;
 
 
 .image-wrapper {
   width: 100%;
   height: 100%;
-  border: 1px solid rgba(0,0,0,0.04);
   overflow: hidden;
   position: relative;
   text-align: center;
-  border-radius: $global-radius;
 }
 
 .image-overlay-content {
@@ -24,10 +21,38 @@ $global-radius: 4px;
   left: 0
 }
 
+.program-name {
+  position: absolute;
+  bottom:0;
+  padding: 0 0 10px 30px !important;
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+  z-index: 1000;
+}
+
+.program-description {
+  padding: 5px;
+  .description-block {
+    margin-right: 20px;
+    .block-heading {
+      padding-bottom: 5px;
+    }
+    .block-info {
+      padding: 5px;
+      background: rgba(255, 25, 25, 0.5);
+      color: #FFFFFF;
+    }
+  }
+}
+
+.program-link {
+  text-decoration: none !important;
+}
+
+
 // modifier classes
 
 .overlay-fade-in {
-
   p {
     letter-spacing: 0.15em;
     color: #f4f4f4;
@@ -48,13 +73,12 @@ $global-radius: 4px;
     transition: all 0.4s ease-in-out;
   }
 
-  h2 {
+   div h2 {
     color: #f2f2f2;
     font-size: 1.8rem;
     margin-top: 40%;
     opacity: 0;
     transition: all 0.2s ease-in-out;
-    background: rgba(0,0,0,0.7);
   }
 
   .button {
@@ -96,17 +120,27 @@ $global-radius: 4px;
   }
 }
 
-.day-exercise-container{
+.blue-shadow-box {
   border: 1px solid rgba(81, 203, 238, 1);
+  &:hover {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  }
+}
+
+.red-shadow-box {
+  border: 1px solid rgba(255, 25, 25, 0.5);
+  &:hover {
+    box-shadow: 0 0 5px rgba(255, 25, 25, 0.5);
+  }
+}
+
+.day-exercise-container{
   margin: 15px 5px;
   div {
     img {
       max-height: 150px;
     }
   }
-   &:hover {
-     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-   }
 }
 
 
@@ -120,6 +154,7 @@ $global-radius: 4px;
     text-decoration: none;
   }
 }
+
 .inline {
   display: inline-block;
 }

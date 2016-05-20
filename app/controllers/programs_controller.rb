@@ -32,7 +32,7 @@ class ProgramsController < ApplicationController
   end
 
   def all_programs
-    @programs = TrainingProgram.all
+    @programs = TrainingProgram.includes(:program_type).all
     @body_types = TrainingProgram.body_types
     @male_types = User.male_types
   end

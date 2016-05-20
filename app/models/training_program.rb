@@ -9,7 +9,7 @@ class TrainingProgram < ActiveRecord::Base
     belongs_to day,  class_name: 'TrainingDay'
   end
   enum body_type: ['Ектоморф', 'Мезоморф', 'Ендоморф']
-
+  enum male_type: ['Чоловік', 'Жінка']
   has_attached_file :program_image,
                     :path => ':rails_root/public/system/:attachment/:id/:basename_:style.:extension',
                     :url => '/system/:attachment/:id/:basename_:style.:extension',

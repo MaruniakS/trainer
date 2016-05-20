@@ -1,12 +1,39 @@
 <% programs.each do |program| %>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-      <div class="image-wrapper overlay-fade-in">
-        <%= image_tag(program.program_image.url) %>
-        <div class="image-overlay-content">
-          <h2>.overlay-fade-in</h2>
-          <p class="price">$99.99</p>
-          <%= link_to 'Get it', common_program_path(program), class: 'button' %>
-        </div>
-      </div>
+      <%= link_to common_program_path(program), class: 'program-link' do %>
+          <div class="red-shadow-box">
+            <div class="image-wrapper overlay-fade-in">
+              <%= image_tag(program.program_image.url) %>
+              <h3 class="program-name"><%= program.name %></h3>
+            </div>
+            <div class="program-description ">
+              <div class="description-block inline">
+                <div class="block-heading text-muted">
+                  Ціль тренувань:
+                </div>
+                <div class="block-info">
+                  <%= program.program_type.name %>
+                </div>
+              </div>
+              <div class=" description-block inline">
+                <div class="block-heading text-muted">
+                  Тілобудова:
+                </div>
+                <div class="block-info">
+                  <%= program.body_type %>
+                </div>
+              </div>
+              <div class=" description-block inline">
+                <div class="block-heading text-muted">
+                  Стать:
+                </div>
+                <div class="block-info">
+                  <%= program.male_type %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      <% end %>
     </div>
 <% end %>

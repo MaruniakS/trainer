@@ -34,17 +34,17 @@ $(document).ready(function(){
 
     $('#time-line-1').waypoint(function() {
         $('#time-line-1').addClass('animated fadeInDown');
-    }, { offset: '100%' });
+    }, { offset: '90%' });
     $('#time-line-2').waypoint(function() {
         $('#time-line-2').addClass('animated fadeInDown');
-    }, { offset: '100%' });
+    }, { offset: '90%' });
     $('#time-line-3').waypoint(function() {
         $('#time-line-3').addClass('animated fadeInDown');
-    }, { offset: '100%' });
+    }, { offset: '90%' });
     $('#time-line-4').waypoint(function() {
         $('#time-line-4').addClass('animated fadeInDown');
-    }, { offset: '100%' });
+    }, { offset: '90%' });
     $('#time-line-5').waypoint(function() {
         $('#time-line-5').addClass('animated fadeInDown');
-    }, { offset: '100%' });
+    }, { offset: '90%' });
 });
