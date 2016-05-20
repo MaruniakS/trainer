@@ -184,4 +184,13 @@
 
 .body-tooltip + .tooltip > .tooltip-inner {background-color: transparent !important;}
 
+.full-width {
+  width: 100% !important;
+}
 
+.program-head {
+  height: 70vh;
+  background-size:     cover;                      /* contain for height */
+  background-repeat:   no-repeat;
+  background-position: center center;
+}

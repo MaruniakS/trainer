@@ -1,6 +1,20 @@
+<div class="container full-width">
+  <div class="row program-head">
+
+  </div>
+</div>
 <div class="container main-container">
+  <div class="row text-center">
+    <h1> <%= @program.name %> </h1>
+    <hr class="center-spacer">
+  </div>
  <%= render 'days' %>
  <div id="assign-program">
    <%= render partial: 'programs/partials/assign_program', locals: {program: @program} %>
  </div>
 </div>
+<style>
+  .program-head {
+      background-image: url('<%= @program.program_image %>');
+  }
+</style>
