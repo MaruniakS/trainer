@@ -44,9 +44,17 @@
     }
   }
 }
+.programs-list > div {
+  margin: 10px 0;
+}
 
 .program-link {
   text-decoration: none !important;
+}
+
+.center-spacer {
+  width: 20%;
+  border-top: 3px solid rgb(255, 0, 0);
 }
 
 
@@ -159,6 +167,21 @@
   display: inline-block;
 }
 
+.field {
+  margin: 5px 0;
+  #body-type-glyphicon {
+    position: absolute;
+    right: 10px;
+    top: -6px;
+  }
+}
+.tooltip {
+  background: transparent !important;
+}
+.tooltip-image {
+  max-height: 150px;
+}
 
+.body-tooltip + .tooltip > .tooltip-inner {background-color: transparent !important;}
 
 

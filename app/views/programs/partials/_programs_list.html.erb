@@ -12,7 +12,7 @@
                   Ціль тренувань:
                 </div>
                 <div class="block-info">
-                  <%= program.program_type.name %>
+                  <%= program.program_type.name.present? ? program.program_type.name : 'Будь-яка' %>
                 </div>
               </div>
               <div class=" description-block inline">
@@ -20,7 +20,7 @@
                   Тілобудова:
                 </div>
                 <div class="block-info">
-                  <%= program.body_type %>
+                  <%= program.body_type.present? ? program.body_type :  'Будь-яка' %>
                 </div>
               </div>
               <div class=" description-block inline">
@@ -28,7 +28,7 @@
                   Стать:
                 </div>
                 <div class="block-info">
-                  <%= program.male_type %>
+                  <%= program.male_type.present? ? program.male_type : 'Будь-яка' %>
                 </div>
               </div>
             </div>

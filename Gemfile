@@ -71,6 +71,7 @@ gem 'animate-rails'
 gem 'jquery-waypoints-rails'
 #gem 'jquery-waypoints-rails', '~> 2.0', '>= 2.0.5'
 
+
 # Server
 gem 'puma'
 # Paperclip for files attachments
