@@ -14,7 +14,7 @@
         </div>
         <!-- edit form column -->
         <div class="col-md-9 personal-info">
-          <h3>Інформація про програму</h3>
+          <h3>Основна інформація</h3>
               <label class="col-lg-3 control-label"> Назва: </label>
               <div class="col-lg-8">
                 <%= f.text_field :name, class:'form-control'%>
@@ -42,10 +42,14 @@
         </div>
 
   <% end %>
+
   </div>
   <% tdays = @program.training_days %>
   <% i = 1%>
+  <h1> План тренувань </h1>
+  <hr>
   <div class="row training-days">
+
     <div class="col-sm-1 col-md-2 col-lg-2"></div>
     <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
       <% tdays[0..2].each do |day| %>
