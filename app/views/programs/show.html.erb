@@ -53,9 +53,25 @@
       </div>
     </div>
   </div>
+  <% unless @program.description.empty? %>
+    <div class="row description-row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1> Опис </h1>
+        <hr class="section-heading-spacer">
+        <p class="text-pre-line">
+          <%= @program.description %>
+        </p>
+      </div>
+
+    </div>
+  <% end %>
+
   <%= render 'days' %>
-  <div id="assign-program">
-    <%= render partial: 'programs/partials/assign_program', locals: {program: @program} %>
+  <div id="assign-program" class="row">
+    <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2"></div>
+    <div id = "assign-pr" class="col-xs-8 col-sm-10 col-md-10 col-lg-10">
+      <%= render partial: 'programs/partials/assign_program', locals: {program: @program} %>
+    </div>
   </div>
 </div>
 <style>

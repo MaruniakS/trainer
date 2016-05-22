@@ -58,6 +58,7 @@
 }
 
 
+
 // modifier classes
 
 .overlay-fade-in {
@@ -143,10 +144,10 @@
 }
 
 .day-exercise-container{
-  margin: 15px 5px;
   div {
     img {
       max-height: 150px;
+      padding: 10px;
     }
   }
 }
@@ -160,6 +161,7 @@
   color: black;
   &:hover {
     text-decoration: none;
+    color: black;
   }
 }
 
@@ -224,6 +226,53 @@
       }
       .block-title{
         color: black;
+      }
+    }
+  }
+  .description-row {
+    p{
+      float: none;
+      clear: both;
+    }
+  }
+  #assign-program {
+    #assign-pr {
+      padding-left: 0 !important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  /* Bump up size of carousel content */
+  .block-info {
+    font-size: 1.2em !important;
+  }
+}
+
+#program-plan {
+  .tabable {
+    margin-top: 60px;
+  }
+  .nav-pills > li > a {
+
+  }
+  .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #000000 !important;
+    background-color: #FFFFFF !important;
+    border: solid 1px red;
+  }
+  .tab-content {
+    .tab-pane {
+      padding: 0 !important;
+      .day-exercise-link {
+        padding: 0 !important;
+        margin: 15px 5px;
+        .day-exercise-container {
+          padding: 0 !important;
+          > div {
+            padding: 5px !important;
+          }
+        }
       }
     }
   }
