@@ -5,6 +5,7 @@ class TrainingDaysController < ApplicationController
     tday_exercise = TrainingDayExercise.new(training_day: @tday, exercise: exercise, sets: params[:sets], repetitions: params[:repetitions],
     rest: params[:rest])
     @exercises = Exercise.all
+    @index = params[:index]
     if tday_exercise.save
       render template: 'programs/js_refresh/exercise_save'
     else
@@ -21,6 +22,7 @@ class TrainingDaysController < ApplicationController
     @exercise.sets = params[:sets]
     @exercise.repetitions = params[:repetitions]
     @exercise.exercise = ex
+    @index = params[:index]
     if @exercise.save
       render template: 'programs/js_refresh/exercise_edited'
     else
@@ -31,6 +33,7 @@ class TrainingDaysController < ApplicationController
 
   def delete_exercise
     exercise = TrainingDayExercise.find(params[:id])
+    @index = params[:index]
     @tday = exercise.training_day
     @exercises = Exercise.all
     exercise.destroy

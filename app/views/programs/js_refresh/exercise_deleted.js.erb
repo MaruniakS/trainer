@@ -1,1 +1,1 @@
-$("<%= "#day#{@tday.id}" %>").html("<%= escape_javascript(render partial: 'programs/training_day', locals: { day: @tday, exercises: @exercises} ) %>");
+$("<%= "#day#{@tday.id}" %>").html("<%= escape_javascript(render partial: 'programs/training_day', locals: { day: @tday, exercises: @exercises, index: @index} ) %>");

@@ -12,6 +12,7 @@ class ProgramsController < ApplicationController
   def edit
     @program = TrainingProgram.find(params[:id])
     @exercises = Exercise.all
+    @index = params[:index]
   end
 
   def filter

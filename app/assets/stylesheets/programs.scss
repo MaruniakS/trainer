@@ -303,3 +303,18 @@
 
   }
 }
+
+.modal-body {
+  .form-control {
+    display: inline-block !important;
+    width: 27% !important;
+    margin: 10px;
+  }
+  .select {
+    width: 55% !important;
+  }
+  .btn-primary {
+    float: right;
+    margin-right: 50px;
+  }
+}

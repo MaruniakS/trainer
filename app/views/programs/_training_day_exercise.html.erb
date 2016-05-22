@@ -10,23 +10,21 @@
     <%= image_tag('common/rest.svg')%>
     <p class="inline"> <%= day_exercise.rest %></p>
   </div>
-
 </div>
 <%= link_to 'Редагувати',  '#', 'data-target' => "#myModal_exercise#{day_exercise.id}", 'data-toggle' => 'modal', class: 'btn btn-sm btn-warning'  %>
-<%= link_to 'Видалити', delete_exercise_path(day_exercise.id), method: :delete, data: {confirm: 'Видалити вправу?'}, remote: true, class: 'btn btn-sm btn-danger' %>
+<%= link_to 'Видалити', delete_exercise_path(id: day_exercise.id, index: index),  method: :delete, data: {confirm: 'Видалити вправу?'}, remote: true, class: 'btn btn-sm btn-danger' %>
 <div class="modal fade" id='<%= "myModal_exercise#{day_exercise.id}" %>' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Add exercise</h4>
+        <h4 class="modal-title" id="myModalLabel">Редагувати вправу</h4>
       </div>
       <div class="modal-body">
-        <%= render partial: 'programs/partials/edit_exercise_form', locals: {day_exercise: day_exercise, errors: nil, exercises: @exercises} %>
+        <%= render partial: 'programs/partials/edit_exercise_form', locals: { day_exercise: day_exercise, errors: nil, exercises: @exercises, index: index} %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
