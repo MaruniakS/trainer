@@ -126,6 +126,12 @@ body {
   }
 }
 
+.square-btn-wr {
+  @extend .square-btn;
+  color: #FFFFFF;
+  border: solid 2px #FFFFFF !important;
+}
+
 /* Home page content */
 
 /* ----------------------------------------------------------------------------------------->*/

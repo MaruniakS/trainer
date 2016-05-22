@@ -23,10 +23,24 @@ class TrainingProgram < ActiveRecord::Base
   scope :male_type, -> (male_type) { where male_type: male_type }
   scope :program_type, -> (program_type) {  where program_type: program_type}
 
-
   def training_days
     ids = [first_day_id, second_day_id, third_day_id, fourth_day_id, fifth_day_id, sixth_day_id, seventh_day_id]
     TrainingDay.where(id: ids)
+  end
+
+  def days_count
+    count = 0
+    ex_count = 0
+    training_days.each do |t |
+      ex = t.exercises.count
+      count += 1 if ex > 0
+      ex_count += ex
+    end
+    [count, ex_count]
+  end
+
+  def get_author
+    template.nil? ? user.username : template.user.username
   end
 
   def duplicate_program(user)

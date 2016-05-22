@@ -1,17 +1,62 @@
-<div class="container full-width">
+<% if @program.program_image.present? %>
+ <div class="container full-width">
   <div class="row program-head">
-
+    <div id="program-head-block">
+      <h1><%= @program.name %></h1>
+      <%= link_to 'Розпочати', '#', class:'btn btn-lg square-btn-wr', role: 'button' %>
+    </div>
   </div>
-</div>
-<div class="container main-container">
-  <div class="row text-center">
-    <h1> <%= @program.name %> </h1>
-    <hr class="center-spacer">
-  </div>
- <%= render 'days' %>
- <div id="assign-program">
-   <%= render partial: 'programs/partials/assign_program', locals: {program: @program} %>
  </div>
+<% end %>
+<div id="program-body" class="container main-container">
+  <% unless @program.program_image.present? %>
+      <div class="row text-center">
+        <h1> <%= @program.name %> </h1>
+        <hr class="center-spacer">
+      </div>
+  <% end %>
+  <div class="row desc-blocks">
+    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 text-center">
+      <div class="desc-block">
+        <div class="block-info"> <%= @program.program_type.name.present? ? @program.program_type.name : 'Будь-яка' %> </div>
+        <div class="block-title"> Ціль </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 text-center">
+      <div class="desc-block">
+      <div class="block-info"> <%= @program.body_type.present? ? @program.body_type :  'Будь-яка' %> </div>
+      <div class="block-title"> Тілобудова </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 text-center">
+      <div class="desc-block">
+      <div class="block-info"> <%= @program.male_type.present? ? @program.male_type : 'Будь-яка' %> </div>
+      <div class="block-title"> Стать </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 text-center">
+      <div class="desc-block">
+      <div class="block-info"> <%= @days_count %> </div>
+      <div class="block-title"> Кількість днів </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 text-center">
+      <div class="desc-block">
+      <div class="block-info"> <%= @ex_count %>  </div>
+      <div class="block-title"> Кількість вправ </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 text-center">
+      <div class="desc-block">
+      <div class="block-info"> <%= @author %> </div>
+      <div class="block-title"> Автор </div>
+      </div>
+    </div>
+  </div>
+  <%= render 'days' %>
+  <div id="assign-program">
+    <%= render partial: 'programs/partials/assign_program', locals: {program: @program} %>
+  </div>
 </div>
 <style>
   .program-head {

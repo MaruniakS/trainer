@@ -1,12 +1,12 @@
 class ProgramsController < ApplicationController
   before_action :check_user, only: [:index]
+  before_action :program_info, only: [:show, :common_program]
   def index
     @user = current_user
     @programs = @user.training_programs
   end
 
   def show
-    @program = TrainingProgram.find(params[:id])
   end
 
   def edit
@@ -38,7 +38,15 @@ class ProgramsController < ApplicationController
   end
 
   def common_program
-    @program = TrainingProgram.find(params[:id])
     render action: 'show'
+  end
+
+  private
+  def program_info
+    @program = TrainingProgram.find(params[:id])
+    info = @program.days_count
+    @days_count = info[0]
+    @ex_count = info[1]
+    @author = @program.get_author
   end
 end
