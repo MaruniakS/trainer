@@ -302,6 +302,9 @@
     }
 
   }
+  .form-control {
+    margin-bottom: 15px;
+  }
 }
 
 .modal-body {
@@ -317,4 +320,9 @@
     float: right;
     margin-right: 50px;
   }
+}
+
+.avatar{
+  height: 300px;
+  width: 300px;
 }

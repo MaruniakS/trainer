@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   #   resources :products
   resources :exercises, only: [:index, :show]
   resources :users, only: [:show] do
-    resources :programs
+    resources :programs, controller: 'programs', as: 'training_programs'
   end
 
   # Edit program

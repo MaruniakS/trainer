@@ -8,8 +8,8 @@ class TrainingProgram < ActiveRecord::Base
   [:first_day, :second_day, :third_day, :fourth_day, :fifth_day, :sixth_day, :seventh_day].each do |day|
     belongs_to day,  class_name: 'TrainingDay'
   end
-  enum body_type: ['Ектоморф', 'Мезоморф', 'Ендоморф']
-  enum male_type: ['Чоловік', 'Жінка']
+  enum body_type: %w(Ектоморф Мезоморф Ендоморф)
+  enum male_type: %w(Чоловік Жінка)
   has_attached_file :program_image,
                     :path => ':rails_root/public/system/:attachment/:id/:basename_:style.:extension',
                     :url => '/system/:attachment/:id/:basename_:style.:extension',

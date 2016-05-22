@@ -12,7 +12,15 @@ class ProgramsController < ApplicationController
   def edit
     @program = TrainingProgram.find(params[:id])
     @exercises = Exercise.all
-    @index = params[:index]
+  end
+
+  def update
+    @program = TrainingProgram.find(params[:id])
+    if @program.update(program_params)
+      redirect_to [current_user, @program]
+    else
+      render 'edit'
+    end
   end
 
   def filter
@@ -49,5 +57,9 @@ class ProgramsController < ApplicationController
     @days_count = info[0]
     @ex_count = info[1]
     @author = @program.get_author
+  end
+
+  def program_params
+    params.require(:training_program).permit(:name, :description, :program_type_id, :body_type, :male_type, :program_image)
   end
 end

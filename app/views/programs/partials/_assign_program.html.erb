@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
     <% if current_user.has_program?(@program) %>
-        <%= link_to 'Редагувати', edit_user_program_path(current_user, @program), class: 'btn btn-lg square-btn'%>
+        <%= link_to 'Редагувати', edit_user_training_program_path(current_user, @program), class: 'btn btn-lg square-btn'%>
     <% else %>
         <%= link_to 'Додати у вибране', assign_program_path(program: @program), remote: true, class: 'btn btn-lg square-btn' %>
     <% end %>

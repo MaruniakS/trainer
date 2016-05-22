@@ -1,4 +1,48 @@
 <div class="container main-container edit-program">
+  <h1>Редагування програми</h1>
+  <hr>
+  <div class="row">
+  <%= form_for [current_user, @program], class: 'form-group' do |f| %>
+
+        <!-- left column -->
+        <div class="col-md-3">
+          <div class="text-center">
+            <%= image_tag(@program.program_image, class:'avatar img-thumbnail')%>
+            <h6>Завантажте нове зображення</h6>
+            <%= f.file_field :program_image %>
+          </div>
+        </div>
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
+          <h3>Інформація про програму</h3>
+              <label class="col-lg-3 control-label"> Назва: </label>
+              <div class="col-lg-8">
+                <%= f.text_field :name, class:'form-control'%>
+              </div>
+              <label class="col-lg-3 control-label">Опис:</label>
+              <div class="col-lg-8">
+                <%= f.text_area :description, rows: '15', class:'form-control'%>
+              </div>
+          <label class="col-lg-3 control-label"> Ціль: </label>
+          <div class="col-lg-8">
+            <%= f.collection_select(:program_type_id, @program_types, :id, :name ,  {prompt: true}, {class: 'form-control', include_blank: 'Будь-яка'}) %>
+          </div>
+          <label class="col-lg-3 control-label"> Тілобудова </label>
+          <div class="col-lg-8">
+            <%= f.select(:body_type, TrainingProgram.body_types.keys.to_a,  {prompt: false}, {class: 'form-control', include_blank: 'Будь-яка'}) %>
+          </div>
+          <label class="col-lg-3 control-label"> Стать </label>
+          <div class="col-lg-8">
+            <%= f.select(:male_type, TrainingProgram.male_types.keys.to_a,  {prompt: false}, {class: 'form-control', include_blank: 'Будь-яка'}) %>
+          </div>
+              <label class="col-md-3 control-label"></label>
+              <div class="col-md-8">
+                <%= f.submit 'Зберегти', class: 'btn btn-primary'%>
+              </div>
+        </div>
+
+  <% end %>
+  </div>
   <% tdays = @program.training_days %>
   <% i = 1%>
   <div class="row training-days">
