@@ -5,5 +5,5 @@
         <%= link_to 'Додати у вибране', assign_program_path(program: @program), remote: true, class: 'btn btn-lg square-btn' %>
     <% end %>
 <% else %>
-    <p> Sign in </p>
+    <%= link_to 'Увійти', new_user_registration_path, class:'btn btn-lg btn-primary', role: 'button' %>
 <% end %>

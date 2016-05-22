@@ -20,22 +20,8 @@
         <li><a class="nav-link" href="#">Link</a></li>
         <li class="dropdown mega-dropdown">
           <%= link_to all_programs_path, class: 'nav-link dropdown-toggle  disabled', 'data-toggle' => 'dropdown', 'data-hover' => 'dropdown' do %>
-              Програми <span class="caret"></span>
+              Програми
           <% end %>
-          <div class="dropdown-menu mega-dropdown-menu ">
-            <div class="container-fluid">
-              <!-- Tab panes -->
-              <div class="tab-content">
-                <div class="tab-pane active" id="groups">
-                  <ul class="nav-list list-inline">
-                    <% @program_types.each do |type| %>
-                        <li><%= link_to root_path do %> <span> <%= type.name %> </span> <% end %></li>
-                    <% end %>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
         </li>
         <li class="dropdown mega-dropdown">
           <%= link_to exercises_path, class: 'nav-link dropdown-toggle  disabled', 'data-toggle' => 'dropdown', 'data-hover' => 'dropdown' do %>

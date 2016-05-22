@@ -277,3 +277,29 @@
     }
   }
 }
+
+.edit-program {
+  .training-days {
+    > div > div {
+      margin: 5px 0;
+    }
+
+    .edit-day-container {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .list-group-item {
+    .clock-image {
+      max-height: 50px;
+    }
+  }
+  .exercise {
+    > div {
+      p {
+        padding: 0 5px;
+      }
+    }
+
+  }
+}

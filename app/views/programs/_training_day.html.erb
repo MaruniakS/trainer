@@ -1,15 +1,35 @@
-<% if day.training_day_exercises.empty? %>
-    <div>
-      NO EXERCISES
-    </div>
-<% else %>
-    <% day.training_day_exercises.each do |exercise|%>
-        <div class="edit-exercise-container" id="<%="ex_#{exercise.id}"%>">
-          <%= render partial: 'programs/training_day_exercise', locals: {day_exercise: exercise} %>
-        </div>
+<div class="list-group">
+  <div class="list-group-item">
+    <h3 id="day-title">
+      <%= "День #{index}"%>
+    </h3>
+    <h5 id="day-description">
+      <%= "(#{day.description})" unless day.description.nil? || day.description.empty?  %>
+    </h5>
+  </div>
+
+
+    <% if day.training_day_exercises.empty? %>
+      <div class="list-group-item text-center">
+        <%= image_tag('common/clocks.svg', class: 'clock-image')%>
+        <h5>
+          День відпочинку
+        </h5>
+      </div>
+    <% else %>
+        <% day.training_day_exercises.each do |exercise|%>
+          <div class="list-group-item">
+            <div class="edit-exercise-container" id="<%="ex_#{exercise.id}"%>">
+              <%= render partial: 'programs/training_day_exercise', locals: {day_exercise: exercise} %>
+            </div>
+          </div>
+        <% end %>
     <% end %>
-<% end %>
-<%= link_to 'Add exercise',  '#', 'data-target' => "#myModal_#{day.id}", 'data-toggle' => 'modal'  %>
+  <div class="list-group-item">
+    <%= link_to 'Додати вправу',  '#', 'data-target' => "#myModal_#{day.id}", 'data-toggle' => 'modal', class:'btn btn-md btn-success'  %>
+  </div>
+</div>
+
 <div class="modal fade" id='<%= "myModal_#{day.id}" %>' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

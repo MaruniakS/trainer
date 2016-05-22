@@ -1,7 +1,47 @@
-<div class="container main-container">
-  <% @program.training_days.each do |day|%>
-    <div class="edit-day-container" id= <%="day#{day.id}"%>>
-      <%= render partial: 'training_day', locals: {day: day} %>
+<div class="container main-container edit-program">
+  <% tdays = @program.training_days %>
+  <% i = 1%>
+  <div class="row training-days">
+    <div class="col-sm-1 col-md-2 col-lg-2"></div>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
+      <% tdays[0..2].each do |day| %>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <div class="edit-day-container inline" id= <%="day#{day.id}"%>>
+            <%= render partial: 'training_day', locals: {day: day, index: i} %>
+            <% i+= 1%>
+          </div>
+        </div>
+       <% end %>
     </div>
-  <% end %>
+    <div class="col-sm-1 col-md-2 col-lg-2"></div>
+  </div>
+  <div class="row training-days">
+    <div class="col-sm-1 col-md-2 col-lg-2"></div>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
+      <% tdays[3..5].each do |day| %>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="edit-day-container" id= <%="day#{day.id}"%>>
+              <%= render partial: 'training_day', locals: {day: day, index: i} %>
+              <% i+= 1%>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <div class="col-sm-1 col-md-2 col-lg-2"></div>
+  </div>
+  <% day = tdays.last %>
+  <div class="row training-days">
+    <div class="col-sm-1 col-md-2 col-lg-2"></div>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
+      <div class="col-sm-4 col-md-4 col-lg-4"> </div>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div class="edit-day-container inline" id= <%="day#{day.id}"%>>
+          <%= render partial: 'training_day', locals: {day: day, index: i} %>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4"> </div>
+    </div>
+    <div class="col-sm-1 col-md-2 col-lg-2"></div>
+  </div>
+
 </div>

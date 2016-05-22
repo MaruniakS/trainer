@@ -1,12 +1,19 @@
 <div class="exercise">
-  <%= day_exercise.exercise.name %>
-  <%= day_exercise.rest %>
-  <%= day_exercise.sets %>
-  <%= day_exercise.repetitions %>
+  <h5>
+    <%= day_exercise.exercise.name %>
+  </h5>
+  <div>
+    <%= image_tag('common/sets.svg') %>
+    <p class="inline"><%= day_exercise.sets %></p>
+    <%= image_tag('common/repetitions.svg')%>
+    <p class="inline"> <%= day_exercise.repetitions %></p>
+    <%= image_tag('common/rest.svg')%>
+    <p class="inline"> <%= day_exercise.rest %></p>
+  </div>
 
 </div>
-<%= link_to 'Edit exercise',  '#', 'data-target' => "#myModal_exercise#{day_exercise.id}", 'data-toggle' => 'modal'  %>
-<%= link_to 'Delete exercise', delete_exercise_path(day_exercise.id), method: :delete, data: {confirm: 'Видалити вправу?'}, remote: true %>
+<%= link_to 'Редагувати',  '#', 'data-target' => "#myModal_exercise#{day_exercise.id}", 'data-toggle' => 'modal', class: 'btn btn-sm btn-warning'  %>
+<%= link_to 'Видалити', delete_exercise_path(day_exercise.id), method: :delete, data: {confirm: 'Видалити вправу?'}, remote: true, class: 'btn btn-sm btn-danger' %>
 <div class="modal fade" id='<%= "myModal_exercise#{day_exercise.id}" %>' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
