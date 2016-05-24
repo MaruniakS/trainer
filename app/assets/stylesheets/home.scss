@@ -215,7 +215,7 @@ body {
   position: absolute;
   z-index: 100;
   background-color: #fed136;
-  color: white;
+  color: black;
   border-radius: 100%;
   border: 7px solid #f1f1f1;
   text-align: center;
@@ -329,9 +329,27 @@ body {
 }
 
 #time-line-1 .image-align {
-  background-image: asset-url('main/content-image-1');
+  background-image: asset-url('main/line-1');
 }
 
 #time-line-2 .image-align {
-  background-image: asset-url('main/training-diary1');
+  background-image: asset-url('main/line-2');
+}
+
+#time-line-3 .image-align {
+  background-image: asset-url('main/line-3');
+}
+
+#time-line-4 .image-align {
+  background-image: asset-url('main/line-4');
+}
+
+#time-line-5 .image-align {
+  background-image: asset-url('main/line-5');
+}
+
+.timeline {
+  a:hover {
+    text-decoration: none;
+  }
 }
