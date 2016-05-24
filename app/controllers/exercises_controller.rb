@@ -11,6 +11,6 @@ class ExercisesController < ApplicationController
   end
 
   def group
-    @exercises = Exercise.includes(:exercise_descriptions).by_group(params[:id])
+    @group = MuscleGroup.includes(:exercises).find(params[:id])
   end
 end

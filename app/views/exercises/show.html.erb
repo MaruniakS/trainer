@@ -1,4 +1,4 @@
-<div class="container main-container">
+<div class="container">
   <div class="row text-center">
     <h1 id="exercise-title">
       <%= @exercise.name%>
@@ -6,7 +6,7 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <%= image_tag(@exercise.exercise_image, class: 'exercise-image') %>
+      <%= image_tag(@exercise.exercise_image, class: 'exercise-image img-thumbnail') %>
       <h3> Опис </h3>
       <p class="text-pre-line"><%= @exercise.description %></p>
     </div>

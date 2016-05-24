@@ -33,7 +33,7 @@ $(document).ready(function(){
     }, { offset: '70%' });
 
     $('#time-line-1').waypoint(function() {
-        $('#time-line-1').addClass('animated fadeInDown');
+        $('#time-line-1').addClass('animated fadeIn');
     }, { offset: '80%' });
     $('#time-line-2').waypoint(function() {
         $('#time-line-2').addClass('animated fadeInDown');
