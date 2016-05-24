@@ -7,21 +7,7 @@
       </div>
     </div>
     <div class="row">
-      <% @group.exercises.each do |e|%>
-          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 exercise-list-item">
-            <a class="exercise-list-link" data-toggle="modal">
-              <div class="exercise-list-hover">
-                <div class="exercise-list-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <%= image_tag(e.exercise_image, class: 'img-responsive') %>
-            </a>
-            <div class="exercise-list-caption">
-              <h4><%= e.name %></h4>
-            </div>
-          </div>
-      <% end %>
+        <%= render partial: 'exercises_list', locals: {exercises: @group.exercises} %>
 
     </div>
   </div>

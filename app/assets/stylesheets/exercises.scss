@@ -78,7 +78,7 @@ section h3.section-subheading {
   margin: 0 auto;
 }
 #exercise-list .exercise-list-item .exercise-list-link .exercise-list-hover {
-  background: rgba(254, 209, 54, 0.9);
+  background: rgba(255, 25, 25, 0.5);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -90,14 +90,14 @@ section h3.section-subheading {
 #exercise-list .exercise-list-item .exercise-list-link .exercise-list-hover:hover {
   opacity: 1;
 }
-#exercise-list .exercise-list-item .exercise-listo-link .exercise-list-hover .exercise-list-hover-content {
+#exercise-list .exercise-list-item .exercise-list-link .exercise-list-hover .exercise-list-hover-content {
   position: absolute;
   width: 100%;
   height: 20px;
   font-size: 20px;
   text-align: center;
   top: 50%;
-  margin-top: -12px;
+  margin-top: -20px;
   color: white;
 }
 #exercise-list .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
@@ -113,6 +113,7 @@ section h3.section-subheading {
   background-color: white;
   text-align: center;
   padding: 25px;
+  height: 75px;
 }
 #exercise-list .exercise-list-item .exercise-list-caption h4 {
   text-transform: none;
@@ -125,6 +126,10 @@ section h3.section-subheading {
 }
 #exercise-list * {
   z-index: 2;
+}
+#exercise-list .exercise-list-item img {
+  max-height: 200px;
+  height: 200px;
 }
 @media (min-width: 767px) {
   #exercise-list .exercise-list-item {
