@@ -121,8 +121,8 @@ body {
   border: solid 2px #000000 !important;
   margin-bottom: 10px !important;
   &:hover {
-    color: rgb(255, 0, 0) !important; //#000000
-    border: solid 2px  rgb(255, 0, 0) !important;
+    color:rgba(180 , 20, 20, 1) !important; //#000000
+    border: solid 2px  rgba(180 , 20, 20, 1) !important;
     text-decoration: none;
     //background: #FFFFFF;
   }
@@ -155,7 +155,7 @@ body {
 .section-heading-spacer {
   float: left;
   width: 200px;
-  border-top: 3px solid rgb(255, 0, 0);
+  border-top: 3px solid rgba(180 , 20, 20, 1);
 }
 
 #about {

@@ -1,66 +1,56 @@
-<section id="work-process">
+<section id="process">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title text-center"> Індивідуальна програма тренувань </h2>
-      <p class="text-center"> Як це працює? <br> <br> <br></p>
+      <p class="text-center"> Як це працює? </p>
     </div>
     <div class="row text-center">
       <div class="col-md-2 col-md-4 col-xs-6 col-lg-2">
           <div class="icon-circle">
             <span>1</span>
-            <i class="fa fa-coffee fa-2x"></i>
+            <i class="fa fa-user fa-2x"></i>
           </div>
-          <h3>MEET</h3>
+          <h3> Авторизуйтеся </h3>
       </div>
       <div class="col-md-2 col-md-4 col-xs-6 col-lg-2">
-        <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
           <div class="icon-circle">
             <span>2</span>
-            <i class="fa fa-bullhorn fa-2x"></i>
+            <i class="fa fa-lightbulb-o  fa-2x"></i>
           </div>
-          <h3>PLAN</h3>
-        </div>
+          <h3>Визначте мету</h3>
       </div>
       <div class="col-md-2 col-md-4 col-xs-6 col-lg-2">
-        <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
           <div class="icon-circle">
             <span>3</span>
-            <i class="fa fa-image fa-2x"></i>
+            <i class="fa fa-venus-mars  fa-2x"></i>
           </div>
-          <h3>DESIGN</h3>
-        </div>
+          <h3>Вкажіть дані</h3>
       </div>
       <div class="col-md-2 col-md-4 col-xs-6 col-lg-2">
-        <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
           <div class="icon-circle">
             <span>4</span>
-            <i class="fa fa-heart fa-2x"></i>
+            <i class="fa fa-heartbeat fa-2x"></i>
           </div>
-          <h3>DEVELOP</h3>
-        </div>
+          <h3> Визначте проблеми </h3>
       </div>
       <div class="col-md-2 col-md-4 col-xs-6 col-lg-2">
-        <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="400ms">
           <div class="icon-circle">
             <span>5</span>
-            <i class="fa fa-shopping-cart fa-2x"></i>
+            <i class="fa fa-male  fa-2x"></i>
           </div>
-          <h3>TESTING</h3>
-        </div>
+          <h3>Оцініть можливості</h3>
       </div>
       <div class="col-md-2 col-md-4 col-xs-6 col-lg-2">
-        <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">
           <div class="icon-circle">
             <span>6</span>
-            <i class="fa fa-space-shuttle fa-2x"></i>
+            <i class="fa fa-gift  fa-2x"></i>
           </div>
-          <h3>LAUNCH</h3>
-        </div>
+          <h3> Отримайте програму </h3>
       </div>
     </div>
   </div>
 </section><!--/#work-process-->
-<div id="individual-section">
+<!--<div id="individual-section">
   <div id="heading">
     <div class="container">
       <div class="row">
@@ -80,13 +70,16 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 <div class="container main-container">
-  <%= form_tag url_for(controller: 'programs', action: 'create_individual') do%>
-      <label class="col-lg-3 control-label"> Ціль: </label>
-      <div class="col-lg-8">
-        <%= select_tag :program_type_id,  options_from_collection_for_select(@program_types, :id, :name) ,{class: 'form-control'} %>
+  <%= form_tag url_for(controller: 'programs', action: 'create_individual') do %>
+      <div class="row">
+        <label class="col-lg-3 control-label"> Ціль: </label>
+        <div class="col-lg-8">
+          <%= select_tag :program_type_id,  options_from_collection_for_select(@program_types, :id, :name) ,{class: 'form-control'} %>
+        </div>
       </div>
+
       <label class="col-lg-3 control-label"> Тілобудова </label>
       <div class="col-lg-8">
         <%= select_tag :body_type,  options_for_select(TrainingProgram.body_types.keys.to_a), {class: 'form-control'} %>

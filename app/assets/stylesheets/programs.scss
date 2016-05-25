@@ -39,7 +39,7 @@
     }
     .block-info {
       padding: 5px;
-      background: rgba(255, 25, 25, 0.9);
+      background: rgba(180 , 20, 20, 1);
       color: #FFFFFF;
     }
   }
@@ -54,7 +54,7 @@
 
 .center-spacer {
   width: 20%;
-  border-top: 3px solid rgb(255, 0, 0);
+  border-top: 3px solid rgba(180 , 20, 20, 1);
 }
 
 
@@ -221,8 +221,8 @@
     .desc-block{
       /*background: rgba(255, 25, 25, 0.9);*/
       padding: 10px 0;
-      color: red;
-      border: solid 2px red;
+      color: rgba(180 , 20, 20, 1);
+      border: solid 2px rgba(180 , 20, 20, 1);
       border-radius: 10px;
       .block-info {
         padding-bottom: 5px;
@@ -352,7 +352,7 @@
           h1 {
             align-self: center;
             font-size: 4em;
-            color: rgba(255, 25, 25, 09);
+            color: rgba(180 , 20, 20, 1);
           }
         }
       }
@@ -376,30 +376,30 @@
   }
 }
 
-#work-process {
+#process {
   padding: 100px 0 50px;
   background: #20222e asset-url('common/bg') no-repeat 0 0;
   background-size: cover;
   color: #fff;
 }
-#work-process h2 {
+#process h2 {
   color: #fff;
 }
-#work-process h3 {
+#process h3 {
   color: #fff;
   margin-bottom: 0;
 }
-#work-process .icon-circle {
+#process .icon-circle {
   display: inline-block;
   width: 80px;
   height: 80px;
   line-height: 80px;
-  border: 2px solid #45aed6;
+  border: 2px solid rgba(180 , 20, 20, 1); /*#45aed6;*/
   border-radius: 100px;
   position: relative;
 }
-#work-process .icon-circle > span {
-  border: 2px solid #45aed6;
+#process .icon-circle > span {
+  border: 2px solid rgba(180 , 20, 20, 1); /*#45aed6;*/
   border-radius: 50%;
   background-color: #fff;
   position: absolute;
@@ -409,6 +409,40 @@
   top: -12px;
   color: #64686d;
 }
-#work-process h3 {
+#process h3 {
   margin-bottom: 50px;
+}
+
+.section-header {
+  margin-bottom: 50px;
+}
+.section-header .section-title {
+  font-size: 44px;
+  color: #272727;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 20px;
+  margin: 0 0 20px;
+}
+.section-header .section-title:before {
+  content: "";
+  position: absolute;
+  width: 140px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -70px;
+  height: 1px;
+  background: #ebebeb;
+}
+.section-header .section-title:after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  bottom: -11px;
+  left: 50%;
+  margin-left: -12px;
+  border: 5px solid #fff;
+  border-radius: 20px;
+  background: rgba(180 , 20, 20, 1);/*#45aed6;*/
 }
