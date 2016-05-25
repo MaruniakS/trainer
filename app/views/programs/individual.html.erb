@@ -1,0 +1,55 @@
+<div class="container main-container">
+  <%= form_tag url_for(controller: 'programs', action: 'create_individual') do%>
+      <label class="col-lg-3 control-label"> Ціль: </label>
+      <div class="col-lg-8">
+        <%= select_tag :program_type_id,  options_from_collection_for_select(@program_types, :id, :name) ,{class: 'form-control'} %>
+      </div>
+      <label class="col-lg-3 control-label"> Тілобудова </label>
+      <div class="col-lg-8">
+        <%= select_tag :body_type,  options_for_select(TrainingProgram.body_types.keys.to_a), {class: 'form-control'} %>
+      </div>
+      <label class="col-lg-3 control-label"> Стать </label>
+      <div class="col-lg-8">
+        <%= select_tag :male_type,  options_for_select(TrainingProgram.male_types.keys.to_a), {class: 'form-control'} %>
+      </div>
+      <label class="col-lg-3 control-label"> Вік </label>
+      <div class="col-lg-8">
+        <%= select_tag :age, options_for_select(TrainingProgram.user_ages.keys.to_a),{class: 'form-control', include_blank: 'Будь-який'}  %>
+        </div>
+      <label class="col-lg-3 control-label"> Болі в суглобах </label>
+      <div class="col-lg-8">
+        <%= select_tag :joint_pain, options_for_select(TrainingProgram.joint_pains.keys.to_a),{class: 'form-control selectpicker', title: 'Немає проблем із суглобами', multiple: true}  %>
+      </div>
+      <label class="col-lg-3 control-label"> Чи можете ви підтягнутися до перекладини 8 разів? </label>
+      <div class="col-lg-8">
+        <label class="radio-inline">
+          <%= radio_button_tag :workout_1, true %> Так
+        </label>
+        <label class="radio-inline">
+          <%= radio_button_tag :workout_1, false %> Ні
+        </label>
+      </div>
+      <label class="col-lg-3 control-label"> Чи можете ви віджатися на брусах 8 разів? </label>
+      <div class="col-lg-8">
+        <label class="radio-inline">
+          <%= radio_button_tag :workout_2, true %> Так
+        </label>
+        <label class="radio-inline">
+          <%= radio_button_tag :workout_2, false %> Ні
+        </label>
+      </div>
+      <label class="col-lg-3 control-label"> Чи можете ви віджатися від підлоги 8 разів? </label>
+      <div class="col-lg-8">
+        <label class="radio-inline">
+          <%= radio_button_tag :workout_3, true %> Так
+        </label>
+        <label class="radio-inline">
+          <%= radio_button_tag :workout_3, false %> Ні
+        </label>
+      </div>
+      <label class="col-md-3 control-label"></label>
+      <div class="col-md-8">
+        <%= submit_tag 'Зберегти', class: 'btn btn-primary'%>
+      </div>
+  <% end %>
+</div>

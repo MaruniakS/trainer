@@ -31,6 +31,10 @@ Rails.application.routes.draw do
   # Single program
   get '/programs/:id' => 'programs#common_program', as: 'common_program'
 
+  # Generate individual program
+  get '/individual' => 'programs#individual', as: 'individual_program'
+  post '/create_individual' => 'programs#create_individual', as: 'create_individual_program'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

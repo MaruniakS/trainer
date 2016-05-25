@@ -10,6 +10,8 @@ class TrainingProgram < ActiveRecord::Base
   end
   enum body_type: %w(Ектоморф Мезоморф Ендоморф)
   enum male_type: %w(Чоловік Жінка)
+  enum user_age: ['Менше 15', '16-20', '21-30', '31-40', '41-50','51-60', '61-70', 'Більше 70' ]
+  enum joint_pain: %w(Спина Коліна Плечі Лікті Зап’ястя Таз Стопа)
   has_attached_file :program_image,
                     :path => ':rails_root/public/system/:attachment/:id/:basename_:style.:extension',
                     :url => '/system/:attachment/:id/:basename_:style.:extension',

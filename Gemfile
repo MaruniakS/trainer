@@ -7,6 +7,7 @@ gem 'sass-rails', '~> 5.0'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'autoprefixer-rails'
+gem 'bootstrap-select-rails'
 
 # Turbolinks
 gem 'jquery-turbolinks'

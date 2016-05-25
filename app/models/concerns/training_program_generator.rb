@@ -2,9 +2,9 @@ module TrainingProgramGenerator
   extend ActiveSupport::Concern
 
   module ClassMethods
-    def generate_program(age, sex, body_type, purpose)
+    def generate_program(params, user)
       begin
-        program = TrainingProgram.create(name: 'Індивідуальна програма тренувань', male_type: sex, body_type: body_type, program_type_id: purpose)
+        program = TrainingProgram.create(name: 'Індивідуальна програма тренувань', male_type: params[:male_type], body_type: params[:body_type], program_type_id: params[:program_type_id], user: user)
         days = male_ectomorph_weight
         program.first_day = days[0]
         program.second_day = days[1]

@@ -23,6 +23,15 @@ class ProgramsController < ApplicationController
     end
   end
 
+  def individual
+    @program = TrainingProgram.new
+  end
+
+  def create_individual
+    @program = TrainingProgram.generate_program(individual_params, current_user)
+    redirect_to [current_user, @program]
+  end
+
   def filter
     @programs = TrainingProgram.filter(params.slice(:body_type, :program_type, :male_type))
     respond_to do |format|
@@ -32,7 +41,7 @@ class ProgramsController < ApplicationController
 
   def assign_to_user
     @program = TrainingProgram.find(params[:program])
-    if !current_user.has_program? @program
+    unless current_user.has_program? @program
       @program.duplicate_program(current_user)
     end
     respond_to do |format|
@@ -61,5 +70,9 @@ class ProgramsController < ApplicationController
 
   def program_params
     params.require(:training_program).permit(:name, :description, :program_type_id, :body_type, :male_type, :program_image)
+  end
+
+  def individual_params
+    params.permit(:program_type_id, :body_type, :male_type, :age, :joint_pain, :workout_1, :workout_2, :workout_3)
   end
 end

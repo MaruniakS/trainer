@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-select
 //= require jquery.waypoints
 //= require jquery.turbolinks
 //= require jquery_ujs
