@@ -448,6 +448,7 @@
 }
 
 #individual-form {
+  padding-bottom: 50px;
   .row {
     display: flex;
     justify-content: center;
@@ -468,4 +469,8 @@
       top: -6px;
     }
   }
+}
+
+#services {
+  background-color: #f8f8f8;
 }
