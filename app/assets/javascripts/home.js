@@ -12,6 +12,7 @@ $(document).ready(function(){
 
     $("#main-content-1, #main-content-2, #main-content-3, #content-image-1,#content-image-2,#content-image-3").css('opacity', 0);
     $("#time-line-1, #time-line-2, #time-line-3, #time-line-4,#time-line-5").css('opacity', 0);
+
     $('#main-content-1').waypoint(function() {
         $('#main-content-1').addClass('animated fadeInLeft');
     }, { offset: '70%' });
@@ -31,7 +32,6 @@ $(document).ready(function(){
     $('#content-image-3').waypoint(function() {
         $('#content-image-3').addClass('animated fadeInRight');
     }, { offset: '70%' });
-
     $('#time-line-1').waypoint(function() {
         $('#time-line-1').addClass('animated fadeIn');
     }, { offset: '80%' });
