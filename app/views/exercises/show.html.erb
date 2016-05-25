@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container main-container">
   <div class="row text-center">
     <h1 id="exercise-title">
       <%= @exercise.name%>
@@ -11,16 +11,27 @@
       <p class="text-pre-line"><%= @exercise.description %></p>
     </div>
   </div>
+</div>
+<div class="exercise-description-section">
+  <div class="container">
   <div class="row">
-    <h3> Техніка виконання </h3>
-    <ol>
+    <h3 class="text-center"> Техніка виконання </h3>
       <% @exercise.exercise_descriptions.each do |step| %>
-        <li>
+        <div class="row">
+        <div class="col-sm-2 col-md-3 col-lg-3"></div>
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 text-center">
+          <div class="step">
+            <%= step.order %>
+          </div>
           <%= step.step %>
-        </li>
+        </div>
+        <div class="col-sm-2 col-md-3 col-lg-3"></div>
+         </div>
       <% end %>
-    </ol>
   </div>
+  </div>
+</div>
+<div class="container">
   <div class="row">
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
     <div class="cols-xs-12 col-sm-8 col-md-8 col-lg-8">
@@ -30,15 +41,13 @@
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
   </div>
-  <div class="row">
-    <h3> Вправи-аналоги </h3>
-    <ol>
-      <% @analogs.each do |analog| %>
-          <li>
-            <%= link_to analog.name, analog %>
-          </li>
-      <% end %>
-    </ol>
-  </div>
+  <% unless @analogs.empty? %>
+      <div class="row">
+        <h3> Вправи-аналоги </h3>
+        <%= render partial: 'exercises_list', locals: {exercises: @analogs} %>
+      </div>
+  <% end %>
+
+
 </div>
 
