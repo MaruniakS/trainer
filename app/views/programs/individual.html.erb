@@ -72,60 +72,95 @@
   </div>
 </div>-->
 <div class="container main-container">
-  <%= form_tag url_for(controller: 'programs', action: 'create_individual') do %>
+      <%= form_tag url_for(controller: 'programs', action: 'create_individual'), id: 'individual-form' do %>
       <div class="row">
-        <label class="col-lg-3 control-label"> Ціль: </label>
-        <div class="col-lg-8">
-          <%= select_tag :program_type_id,  options_from_collection_for_select(@program_types, :id, :name) ,{class: 'form-control'} %>
+         <div class="col-sm-2 col-md-2 col-lg-4"></div>
+          <label class="col-xs-6 col-sm-3 col-md-3 col-lg-1 control-label"> Ціль: </label>
+          <div class="col-xs-6 col-sm-5 col-md-5 col-lg-3">
+            <%= select_tag :program_type_id,  options_from_collection_for_select(@program_types, :id, :name) ,{class: 'form-control'} %>
+          </div>
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
+        <label class="col-xs-6 col-sm-3 col-md-3 col-lg-1 control-label"> Тілобудова: </label>
+        <div class="col-xs-6 col-sm-5 col-md-5 col-lg-3">
+          <%= select_tag :body_type,  options_for_select(TrainingProgram.body_types.keys.to_a), {class: 'form-control'} %>
+          <%= link_to '#', class:'body-tooltip', title: "#{image_tag('common/bodytype_tooltip.jpg', class: 'tooltip-image')}", 'data-toggle'=>'tooltip' do %>
+              <i id="body-type-glyphicon" class="glyphicon glyphicon-question-sign"></i>
+          <% end %>
         </div>
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
       </div>
-
-      <label class="col-lg-3 control-label"> Тілобудова </label>
-      <div class="col-lg-8">
-        <%= select_tag :body_type,  options_for_select(TrainingProgram.body_types.keys.to_a), {class: 'form-control'} %>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
+        <label class="col-xs-6 col-sm-3 col-md-3 col-lg-1 control-label"> Стать: </label>
+        <div class="col-xs-6 col-sm-5 col-md-5 col-lg-3">
+          <%= select_tag :male_type,  options_for_select(TrainingProgram.male_types.keys.to_a), {class: 'form-control'} %>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
       </div>
-      <label class="col-lg-3 control-label"> Стать </label>
-      <div class="col-lg-8">
-        <%= select_tag :male_type,  options_for_select(TrainingProgram.male_types.keys.to_a), {class: 'form-control'} %>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
+        <label class="col-xs-6 col-sm-3 col-md-3 col-lg-1 control-label"> Вік: </label>
+        <div class="col-xs-6 col-sm-5 col-md-5 col-lg-3">
+          <%= select_tag :age, options_for_select(TrainingProgram.user_ages.keys.to_a),{class: 'form-control', include_blank: 'Будь-який'}  %>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
       </div>
-      <label class="col-lg-3 control-label"> Вік </label>
-      <div class="col-lg-8">
-        <%= select_tag :age, options_for_select(TrainingProgram.user_ages.keys.to_a),{class: 'form-control', include_blank: 'Будь-який'}  %>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
+        <label class="col-xs-6 col-sm-3 col-md-3 col-lg-1 control-label"> Болі в суглобах: </label>
+        <div class="col-xs-6 col-sm-5 col-md-5 col-lg-3">
+          <%= select_tag :joint_pain, options_for_select(TrainingProgram.joint_pains.keys.to_a),{class: 'form-control selectpicker', title: 'Немає', multiple: true}  %>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
       </div>
-      <label class="col-lg-3 control-label"> Болі в суглобах </label>
-      <div class="col-lg-8">
-        <%= select_tag :joint_pain, options_for_select(TrainingProgram.joint_pains.keys.to_a),{class: 'form-control selectpicker', title: 'Немає проблем із суглобами', multiple: true}  %>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
+        <label class="col-xs-6 col-sm-3 col-md-3 col-lg-2 control-label"> Чи можете ви підтягнутися до перекладини 8 разів? </label>
+        <div class="col-xs-6 col-sm-5 col-md-5 col-lg-2">
+          <label class="radio-inline">
+            <%= radio_button_tag :workout_1, true %> Так
+          </label>
+          <label class="radio-inline">
+            <%= radio_button_tag :workout_1, false %> Ні
+          </label>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
       </div>
-      <label class="col-lg-3 control-label"> Чи можете ви підтягнутися до перекладини 8 разів? </label>
-      <div class="col-lg-8">
-        <label class="radio-inline">
-          <%= radio_button_tag :workout_1, true %> Так
-        </label>
-        <label class="radio-inline">
-          <%= radio_button_tag :workout_1, false %> Ні
-        </label>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
+        <label class="col-xs-6 col-sm-3 col-md-3 col-lg-2 control-label"> Чи можете ви віджатися на брусах 8 разів? </label>
+        <div class="col-xs-6 col-sm-5 col-md-5 col-lg-2">
+          <label class="radio-inline">
+            <%= radio_button_tag :workout_2, true %> Так
+          </label>
+          <label class="radio-inline">
+            <%= radio_button_tag :workout_2, false %> Ні
+          </label>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
       </div>
-      <label class="col-lg-3 control-label"> Чи можете ви віджатися на брусах 8 разів? </label>
-      <div class="col-lg-8">
-        <label class="radio-inline">
-          <%= radio_button_tag :workout_2, true %> Так
-        </label>
-        <label class="radio-inline">
-          <%= radio_button_tag :workout_2, false %> Ні
-        </label>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
+        <label class="col-xs-6 col-sm-3 col-md-3 col-lg-2 control-label"> Чи можете ви віджатися від підлоги 8 разів? </label>
+        <div class="col-xs-6 col-sm-5 col-md-5 col-lg-2">
+          <label class="radio-inline">
+            <%= radio_button_tag :workout_3, true %> Так
+          </label>
+          <label class="radio-inline">
+            <%= radio_button_tag :workout_3, false %> Ні
+          </label>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
       </div>
-      <label class="col-lg-3 control-label"> Чи можете ви віджатися від підлоги 8 разів? </label>
-      <div class="col-lg-8">
-        <label class="radio-inline">
-          <%= radio_button_tag :workout_3, true %> Так
-        </label>
-        <label class="radio-inline">
-          <%= radio_button_tag :workout_3, false %> Ні
-        </label>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
+            <div class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+              <%= submit_tag 'Отримати', class: 'btn form-control btn-primary'%>
+            </div>
+        <div class="col-sm-7 col-md-7 col-lg-6"></div>
       </div>
-      <label class="col-md-3 control-label"></label>
-      <div class="col-md-8">
-        <%= submit_tag 'Зберегти', class: 'btn btn-primary'%>
-      </div>
-  <% end %>
+      <% end %>
 </div>

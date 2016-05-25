@@ -446,3 +446,26 @@
   border-radius: 20px;
   background: rgba(180 , 20, 20, 1);/*#45aed6;*/
 }
+
+#individual-form {
+  .row {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    > label {
+      align-self: center;
+    }
+    > div {
+      display: flex;
+      justify-content: center;
+      label {
+        align-self: center;
+      }
+    }
+    #body-type-glyphicon {
+      position: absolute;
+      right: 10px;
+      top: -6px;
+    }
+  }
+}
