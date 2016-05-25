@@ -1,3 +1,86 @@
+<section id="work-process">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title text-center"> Індивідуальна програма тренувань </h2>
+      <p class="text-center"> Як це працює? <br> <br> <br></p>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-2 col-md-4 col-xs-6 col-lg-2">
+          <div class="icon-circle">
+            <span>1</span>
+            <i class="fa fa-coffee fa-2x"></i>
+          </div>
+          <h3>MEET</h3>
+      </div>
+      <div class="col-md-2 col-md-4 col-xs-6 col-lg-2">
+        <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+          <div class="icon-circle">
+            <span>2</span>
+            <i class="fa fa-bullhorn fa-2x"></i>
+          </div>
+          <h3>PLAN</h3>
+        </div>
+      </div>
+      <div class="col-md-2 col-md-4 col-xs-6 col-lg-2">
+        <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
+          <div class="icon-circle">
+            <span>3</span>
+            <i class="fa fa-image fa-2x"></i>
+          </div>
+          <h3>DESIGN</h3>
+        </div>
+      </div>
+      <div class="col-md-2 col-md-4 col-xs-6 col-lg-2">
+        <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
+          <div class="icon-circle">
+            <span>4</span>
+            <i class="fa fa-heart fa-2x"></i>
+          </div>
+          <h3>DEVELOP</h3>
+        </div>
+      </div>
+      <div class="col-md-2 col-md-4 col-xs-6 col-lg-2">
+        <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="400ms">
+          <div class="icon-circle">
+            <span>5</span>
+            <i class="fa fa-shopping-cart fa-2x"></i>
+          </div>
+          <h3>TESTING</h3>
+        </div>
+      </div>
+      <div class="col-md-2 col-md-4 col-xs-6 col-lg-2">
+        <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">
+          <div class="icon-circle">
+            <span>6</span>
+            <i class="fa fa-space-shuttle fa-2x"></i>
+          </div>
+          <h3>LAUNCH</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!--/#work-process-->
+<div id="individual-section">
+  <div id="heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4"> <h1 id="individual-1"> ГОТОВІ </h1></div>
+        <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4"></div>
+        <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4"></div>
+        <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4"> <h1 id="individual-2"> СТАТИ </h1></div>
+        <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4"></div>
+        <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4"></div>
+        <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4"> <h1 id="individual-3"> КРАЩЕ? </h1></div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container main-container">
   <%= form_tag url_for(controller: 'programs', action: 'create_individual') do%>
       <label class="col-lg-3 control-label"> Ціль: </label>
@@ -15,7 +98,7 @@
       <label class="col-lg-3 control-label"> Вік </label>
       <div class="col-lg-8">
         <%= select_tag :age, options_for_select(TrainingProgram.user_ages.keys.to_a),{class: 'form-control', include_blank: 'Будь-який'}  %>
-        </div>
+      </div>
       <label class="col-lg-3 control-label"> Болі в суглобах </label>
       <div class="col-lg-8">
         <%= select_tag :joint_pain, options_for_select(TrainingProgram.joint_pains.keys.to_a),{class: 'form-control selectpicker', title: 'Немає проблем із суглобами', multiple: true}  %>

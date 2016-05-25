@@ -54,13 +54,13 @@
                 <li><a href="#">Another action</a></li>
                 <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>
-                <li><%= link_to 'Signout', destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to 'Вийти', destroy_user_session_path, method: :delete %></li>
 
               </ul>
             </li>
         <% else %>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Увійти</b> <span class="caret"></span></a>
               <ul id="login-dp" class="dropdown-menu">
                 <li>
                   <div class="row">
@@ -75,27 +75,27 @@
                           <%= f.password_field :password, class: 'form-control', placeholder: 'Password', id: 'exampleInputPassword2', required: true  %>
                         </div>
                         <div class="help-block text-right">
-                          <%= link_to 'Forget the password?', new_password_path(resource_name) %>
+                          <%= link_to 'Забули пароль?', new_password_path(resource_name) %>
                         </div>
                         <% if devise_mapping.rememberable? -%>
                           <div class="checkbox">
                             <label>
-                              <%= f.check_box :remember_me %> Remember me
+                              <%= f.check_box :remember_me %> Запам’ятати мене
                             </label>
                           </div>
                         <% end -%>
                         <div class="form-group">
-                          <%= f.submit 'Sign in', class: 'btn btn-primary btn-block'%>
+                          <%= f.submit 'Увійти', class: 'btn btn-primary btn-block'%>
                         </div>
                       <% end %>
                       <div class="social-buttons">
                         <%= link_to omniauth_authorize_path(resource_name, :facebook), class: 'btn btn-fb' do %>
-                            <i class="fa fa-facebook"></i> | Connect via Facebook
+                            <i class="fa fa-facebook"></i> | Увійти з допомогою Facebokk
                         <% end %>
                       </div>
                     </div>
                     <div class="bottom text-center">
-                      New here ? <%= link_to new_user_registration_path  do %><b>Join Us</b><%end%>
+                      Вперше тут? <%= link_to new_user_registration_path  do %><b> Приєднуйся! </b><%end%>
                     </div>
                   </div>
                 </li>
