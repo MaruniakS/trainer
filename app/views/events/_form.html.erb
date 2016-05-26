@@ -1,0 +1,21 @@
+<%= form_for([current_user, @event]) do |f| %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :training_day %><br>
+      <%= f.collection_select(:training_day_id, @days, :id, :description ,  {prompt: true}, {class: 'form-control', include_blank: 'Будь-яка'}) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :schedule %><br>
+      <%= f.schedule_select :schedule, style: :bootstrap %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

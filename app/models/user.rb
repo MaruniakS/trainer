@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   extend FriendlyId
   has_many :identities
   has_many :training_programs, foreign_key: :user_id
+  has_many :events
   attr_accessor :login
   attr_accessor :roles
 

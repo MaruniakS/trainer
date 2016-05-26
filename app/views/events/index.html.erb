@@ -1,0 +1,32 @@
+<div class="container main-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <%= month_calendar events: @events do |date, events| %>
+          <%= date %>
+
+          <% events.each do |event| %>
+              <div>
+                <%= event.name %>
+              </div>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="list-group">
+        <div class="list-group-item">
+          <h3> Заплановані тренування </h3>
+        </div>
+        <% @events.each do |event| %>
+            <div class="list-group-item">
+              <p> <%= event.name %> </p>
+            </div>
+        <% end %>
+        <div class="list-group-item">
+          <%= link_to 'Запланувати нове', new_user_event_path, class: 'btn btn-md btn-primary' %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

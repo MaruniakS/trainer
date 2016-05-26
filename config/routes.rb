@@ -46,6 +46,10 @@ Rails.application.routes.draw do
   resources :exercises, only: [:index, :show]
   resources :users, only: [:show] do
     resources :programs, controller: 'programs', as: 'training_programs'
+    resources :events, controller: 'events'
+    member do
+      get 'calendar'
+    end
   end
 
   # Edit program

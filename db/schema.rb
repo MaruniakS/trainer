@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160515110802) do
+ActiveRecord::Schema.define(version: 20160526192201) do
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "training_day_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "events", ["training_day_id"], name: "index_events_on_training_day_id"
+  add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "exercise_analogs", force: :cascade do |t|
     t.integer  "exercise_id"
@@ -90,6 +101,21 @@ ActiveRecord::Schema.define(version: 20160515110802) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.integer  "schedulable_id"
+    t.string   "schedulable_type"
+    t.date     "date"
+    t.time     "time"
+    t.string   "rule"
+    t.string   "interval"
+    t.text     "day"
+    t.text     "day_of_week"
+    t.datetime "until"
+    t.integer  "count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "training_day_exercises", force: :cascade do |t|

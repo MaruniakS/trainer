@@ -84,3 +84,11 @@ gem 'cancancan'
 
 # Permalink plugins for ActiveRecord
 gem 'friendly_id', '~> 5.1.0'
+
+# Calendar
+gem 'simple_calendar', '~> 2.0'
+gem 'ice_cube'
+gem 'schedulable'
+
+# i18n
+gem 'rails-i18n', '~> 4.0.0'
