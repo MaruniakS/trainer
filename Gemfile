@@ -84,3 +84,7 @@ gem 'cancancan'
 
 # Permalink plugins for ActiveRecord
 gem 'friendly_id', '~> 5.1.0'
+
+# Calendar
+gem 'simple_calendar', '~> 2.0'
+gem 'calendarize'

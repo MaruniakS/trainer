@@ -63,6 +63,8 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.2)
     byebug (8.2.1)
+    calendarize (0.1)
+      rails (>= 3.1.0)
     cancancan (1.13.1)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -216,6 +218,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    simple_calendar (2.1.4)
+      rails (>= 3.0)
     spring (1.6.2)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -252,6 +256,7 @@ DEPENDENCIES
   bootstrap-multiselect-rails
   bootstrap-sass (~> 3.3, >= 3.3.6)
   byebug
+  calendarize
   cancancan
   coffee-rails (~> 4.1.0)
   devise
@@ -273,6 +278,7 @@ DEPENDENCIES
   rake (~> 11.1.2)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  simple_calendar (~> 2.0)
   spring
   sqlite3
   turbolinks

@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require bootstrap-multiselect
 //= require bootstrap-sprockets
+//= require calendarize
 //= require_tree .
 //= require turbolinks
 

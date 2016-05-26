@@ -1,0 +1,8 @@
+<div class="container main-container">
+  <%= daily_calendar @calendar[:date], Event.for_week(@calendar[:date]), verbose: @calendar[:verbose] do |c| %>
+    <%= l(c.event.start_time, format: :short) %>
+  <% end %>
+  <%= week_calendar number_of_weeks: 2 do |date| %>
+      <%= date %>
+  <% end %>
+</div>

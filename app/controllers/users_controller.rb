@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  calendarize
   before_action :check_user, only: [:show, :edit]
 
   def show
@@ -7,6 +7,10 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = current_user
+  end
+
+  def calendar
     @user = current_user
   end
 end
