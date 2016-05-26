@@ -1,19 +1,27 @@
-
-<div class="container main-container">
+<section id="exercise-index">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title text-center"> Групи м’язів </h2>
+      <p class="text-center"> Вправи розподілені до груп м’язів, котрі вони тренують </p>
+    </div>
+  </div>
+  <div class="container">
     <div class="row">
       <% @muscle_groups.each do |g|%>
-        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 ">
-          <%= link_to exercises_group_path(g) do %>
-              <div class="muscle-group-container">
-                <div class="image-wrapper overlay-fade-in">
-                  <%= image_tag(g.muscle_group_image.url) %>
-                </div>
-                <h4 class="muscle-group-name">
-                  <%= g.name %>
-                </h4>
-              </div>
-          <% end %>
-        </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
+            <%= link_to exercises_group_path(g) do %>
+                  <div class="image-wrapper overlay-slide-in-left">
+                    <%= image_tag(g.muscle_group_image.url) %>
+                    <div class="image-overlay-content">
+                      <%= link_to g.name, exercises_group_path(g), class:'button'%>
+                    </div>
+                  </div>
+            <% end %>
+          </div>
       <% end %>
     </div>
-</div>
+  </div>
+</section>
+
+
+
