@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160526192201) do
   add_index "events", ["training_day_id"], name: "index_events_on_training_day_id"
   add_index "events", ["user_id"], name: "index_events_on_user_id"
 
+
   create_table "exercise_analogs", force: :cascade do |t|
     t.integer  "exercise_id"
     t.integer  "analog_id"
