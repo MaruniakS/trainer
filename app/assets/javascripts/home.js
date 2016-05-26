@@ -33,8 +33,8 @@ $(document).ready(function(){
         $('#content-image-3').addClass('animated fadeInRight');
     }, { offset: '70%' });
     $('#time-line-1').waypoint(function() {
-        $('#time-line-1').addClass('animated fadeIn');
-    }, { offset: '80%' });
+        $('#time-line-1').addClass('animated fadeInDown');
+    }, { offset: '90%' });
     $('#time-line-2').waypoint(function() {
         $('#time-line-2').addClass('animated fadeInDown');
     }, { offset: '80%' });

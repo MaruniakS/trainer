@@ -31,6 +31,9 @@ Logo by Sneaker-mission.com (http://www.sneaker-mission.com/)
 .nav-tabs > li.active > a:focus {
   border: none !important;
   border-radius: 0 !important;
+  .navbar-default, .navbar-inner {
+    opacity: 1 !important;
+  }
 }
 
 .nav-list { border-bottom: 1px solid #eee; }

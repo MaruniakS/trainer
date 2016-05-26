@@ -1,62 +1,60 @@
-<section id="features">
+<section id="exercise-show">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title text-center"> <%= @exercise.name%> </h2>
-      <p class="text-center"> Знайдіть необхідну Вам програму залежно від тілобудови, статі та та поставленої мети</p>
+      <p class="text-center"> <%= @exercise.muscle_group.name %></p>
     </div>
-  </div>
-</section>
-<div class="container main-container">
-  <div class="row text-center">
-    <h1 id="exercise-title">
-      <%= @exercise.name %>
-    </h1>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <%= image_tag(@exercise.exercise_image, class: 'exercise-image img-thumbnail') %>
-      <h3> Опис </h3>
-      <p class="text-pre-line"><%= @exercise.description %></p>
-    </div>
-  </div>
-</div>
-<div class="exercise-description-section">
-  <div class="container">
-  <div class="row">
-    <h3 class="text-center"> Техніка виконання </h3>
-      <% @exercise.exercise_descriptions.each do |step| %>
-        <div class="row">
-        <div class="col-sm-2 col-md-3 col-lg-3"></div>
-        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 text-center">
-          <div class="step">
-            <%= step.order %>
-          </div>
-          <%= step.step %>
-        </div>
-        <div class="col-sm-2 col-md-3 col-lg-3"></div>
-         </div>
-      <% end %>
-  </div>
-  </div>
-</div>
-<% unless @exercise.youtube_url.nil? || @exercise.youtube_url.empty? %>
-<div class="container exercise-video">
-  <div class="row">
-    <div class="col-sm-2 col-md-2 col-lg-2"></div>
-    <div class="cols-xs-12 col-sm-8 col-md-8 col-lg-8">
-      <div class="embed-container">
-        <%= embed(@exercise.youtube_url) %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <%= image_tag(@exercise.exercise_image, class: 'exercise-image img-thumbnail') %>
+        <h3> Опис </h3>
+        <p class="text-pre-line"><%= @exercise.description %></p>
       </div>
     </div>
-    <div class="col-sm-2 col-md-2 col-lg-2"></div>
   </div>
-</div>
-<% end %>
-<% unless @analogs.empty? %>
+  <div class="exercise-description-section">
     <div class="container">
       <div class="row">
-        <h3> Вправи-аналоги </h3>
-        <%= render partial: 'exercises_list', locals: {exercises: @analogs} %>
+        <h3 class="text-center"> Техніка виконання </h3>
+        <% @exercise.exercise_descriptions.each do |step| %>
+            <div class="row">
+              <div class="col-sm-2 col-md-3 col-lg-3"></div>
+              <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 text-center">
+                <div class="step">
+                  <%= step.order %>
+                </div>
+                <%= step.step %>
+              </div>
+              <div class="col-sm-2 col-md-3 col-lg-3"></div>
+            </div>
+        <% end %>
       </div>
     </div>
- <% end %>
+  </div>
+  <% unless @exercise.youtube_url.nil? || @exercise.youtube_url.empty? %>
+      <div class="container exercise-video">
+        <div class="row">
+          <h3 class="text-center"> Відео виконання </h3>
+        </div>
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-2"></div>
+          <div class="cols-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <div class="embed-container">
+              <%= embed(@exercise.youtube_url) %>
+            </div>
+          </div>
+          <div class="col-sm-2 col-md-2 col-lg-2"></div>
+        </div>
+      </div>
+  <% end %>
+  <% unless @analogs.empty? %>
+      <div class="container">
+        <div class="row">
+          <h3> Вправи-аналоги </h3>
+          <%= render partial: 'exercises_list', locals: {exercises: @analogs} %>
+        </div>
+      </div>
+  <% end %>
+</section>
+
+
