@@ -1,6 +1,14 @@
 class EventsController < ApplicationController
   def index
     @events = Event.includes(:training_day).where(user: current_user)
+
+    @ev = []
+    @events.each do |event|
+      event.schedule.occurrences(Time.now + 2.month).each do |ev|
+        @ev << {id: event.id, training_day_id: event.training_day_id, start_time: ev.to_s}
+      end
+    end
+    render json: @events + [{}] + @ev
   end
 
   def show

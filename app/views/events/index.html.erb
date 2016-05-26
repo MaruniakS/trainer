@@ -1,9 +1,8 @@
 <div class="container main-container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-      <%= month_calendar events: @events do |date, events| %>
+      <%= month_calendar events: @ev do |date, events| %>
           <%= date %>
-
           <% events.each do |event| %>
               <div>
                 <%= event.name %>

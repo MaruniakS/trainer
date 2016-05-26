@@ -4,6 +4,7 @@ class Event < ActiveRecord::Base
   acts_as_schedulable :schedule
 
   def start_time
-    self.schedule ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
+    self.schedule.occurrences(2.month.ago + 2.month)
+    ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
   end
 end
