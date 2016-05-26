@@ -332,6 +332,12 @@
 }
 
 #individual-section {
+  #joint-select {
+    width: 100% !important;
+  }
+  .btn-group {
+    width: 100% !important;
+  }
   #heading {
     position: relative;
     background-image: asset-url('programs/individual');

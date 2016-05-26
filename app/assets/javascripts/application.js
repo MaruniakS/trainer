@@ -11,11 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-select
 //= require jquery.waypoints
 //= require jquery.turbolinks
 //= require jquery_ujs
-
+//= require bootstrap-multiselect
 //= require bootstrap-sprockets
 //= require_tree .
 //= require turbolinks
+

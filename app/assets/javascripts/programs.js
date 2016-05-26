@@ -4,4 +4,9 @@ $(document).ready(function(){
         placement: 'bottom',
         html: true
     });
+    $('#joint-select').multiselect({
+        nonSelectedText: 'Немає',
+        buttonWidth: '100%',
+        dropRight: true
+    });
 });
