@@ -1,7 +1,7 @@
 <% programs.each do |program| %>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <%= link_to common_program_path(program), class: 'program-link' do %>
-          <div class="red-shadow-box">
+          <div class="program-wrap">
             <div class="image-wrapper overlay-fade-in">
               <%= image_tag(program.program_image.url) %>
               <h3 class="program-name"><%= program.name %></h3>
