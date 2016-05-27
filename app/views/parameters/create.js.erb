@@ -1,1 +1,8 @@
 $("#params-container").html("<%= escape_javascript(render partial: 'parameters_list', locals: { parameters: @parameters } ) %>");
+$("#chart").html("<%= escape_javascript(render partial: 'chart', locals: {info: @data  } ) %>");
+var ctx = $("#myChart");
+var data = $('#chart-data').data('data');
+var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: data
+});
