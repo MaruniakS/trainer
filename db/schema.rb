@@ -17,6 +17,9 @@ ActiveRecord::Schema.define(version: 20160527175657) do
     t.string   "name"
     t.integer  "day"
     t.time     "time"
+    t.boolean  "email"
+    t.boolean  "sms"
+    t.boolean  "sent"
     t.integer  "training_day_id"
     t.integer  "user_id"
     t.datetime "created_at",      null: false

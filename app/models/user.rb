@@ -56,9 +56,26 @@ class User < ActiveRecord::Base
     identities.where(:provider => 'facebook' ).first
   end
 
-  def self.start
-    Event.create(name: 'a')
-    puts Event.count
+  def self.remind
+    events = Event.includes(:user, :training_day).all
+    #day = Date.today.wday
+    events.each do |event|
+      EventMailer.send_remind_email(event.name, event.time, event.user.email).deliver_now
+=begin
+      if day == event.day
+        if event.sent?
+          if Time.now - event.time < 0
+            event.sent = false
+          end
+        else
+          if event.time - Time.now < 3600.0
+            event.sent = true
+          end
+        end
+      end
+      event.save
+=end
+    end
   end
 
   private

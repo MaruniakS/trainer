@@ -4,6 +4,9 @@ class CreateEvents < ActiveRecord::Migration
       t.string :name
       t.integer :day
       t.time :time
+      t.boolean :email
+      t.boolean :sms
+      t.boolean :sent
       t.references :training_day, index: true
       t.references :user, index: true
 
