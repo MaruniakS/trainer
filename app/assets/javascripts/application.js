@@ -14,8 +14,8 @@
 //= require jquery.waypoints
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require Chart
 //= require bootstrap-multiselect
+//= require Chart
 //= require bootstrap-sprockets
 //= require_tree .
 //= require turbolinks
