@@ -1,6 +1,7 @@
 class ParametersController < ApplicationController
   include ChartData
   def index
+    @parameter = Parameter.new
     @parameters = user_parameters
     @data = ParametersController.generate_data(@parameters)
   end
@@ -28,7 +29,7 @@ class ParametersController < ApplicationController
 
   private
   def parameter_params
-    params.require(:parameter).permit(:height, :weight, :neck, :shoulders, :chest, :biceps, :forearm, :waist, :hip, :thigh, :calf)
+    params.require(:parameter).permit(:height, :weight, :neck, :shoulders, :chest, :biceps, :forearm, :waist, :hip, :thigh, :calf, :user_id)
   end
 
   def user_parameters

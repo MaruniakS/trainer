@@ -1,42 +1,48 @@
-<div class="table-responsive">
-  <table class="table table-inverse">
-    <thead>
-    <tr><th> # </th>
-      <th> Дата </th>
-      <th> Ріст </th>
-      <th> Вага </th>
-      <th> Шия </th>
-      <th> Плечі </th>
-      <th> Груди </th>
-      <th> Біцепс </th>
-      <th> Передпліччя </th>
-      <th> Талія </th>
-      <th> Бедра </th>
-      <th> Стегно </th>
-      <th> Литка </th>
-      <th></th></tr>
-    </thead>
-    <tbody>
-    <% parameters.each_with_index do |p, index| %>
-        <tr>
-          <th scope="row"><%= index + 1 %></th>
-          <td> <%= p.date %> </td>
-          <td> <%= p.height %> </td>
-          <td> <%= p.weight %> </td>
-          <td> <%= p.neck %> </td>
-          <td> <%= p.shoulders %> </td>
-          <td> <%= p.chest %> </td>
-          <td> <%= p.biceps %> </td>
-          <td> <%= p.forearm %> </td>
-          <td> <%= p.waist %> </td>
-          <td> <%= p.hip %> </td>
-          <td> <%= p.thigh %> </td>
-          <td> <%= p.calf %> </td>
-          <td data-name="del">
-            <%= link_to '', user_parameter_path(current_user.id, p.id), method: :delete,data: { confirm: 'Видалити запис?' }, remote: true , class: 'btn btn-xs btn-danger glyphicon glyphicon-remove' %>
-          </td>
-        </tr>
-    <% end %>
-    </tbody>
-  </table>
-</div>
+<% if parameters.empty? %>
+    <h2 class="text-center">
+      У щоденнику немає записів
+    </h2>
+<% else %>
+    <div class="table-responsive">
+      <table class="table table-inverse">
+        <thead>
+        <tr><th> # </th>
+          <th> Дата </th>
+          <th> Ріст </th>
+          <th> Вага </th>
+          <th> Шия </th>
+          <th> Плечі </th>
+          <th> Груди </th>
+          <th> Біцепс </th>
+          <th> Передпліччя </th>
+          <th> Талія </th>
+          <th> Бедра </th>
+          <th> Стегно </th>
+          <th> Литка </th>
+          <th></th></tr>
+        </thead>
+        <tbody>
+        <% parameters.each_with_index do |p, index| %>
+            <tr>
+              <th scope="row"><%= index + 1 %></th>
+              <td> <%= p.date %> </td>
+              <td> <%= p.height %> </td>
+              <td> <%= p.weight %> </td>
+              <td> <%= p.neck %> </td>
+              <td> <%= p.shoulders %> </td>
+              <td> <%= p.chest %> </td>
+              <td> <%= p.biceps %> </td>
+              <td> <%= p.forearm %> </td>
+              <td> <%= p.waist %> </td>
+              <td> <%= p.hip %> </td>
+              <td> <%= p.thigh %> </td>
+              <td> <%= p.calf %> </td>
+              <td data-name="del">
+                <%= link_to '', user_parameter_path(current_user.id, p.id), method: :delete,data: { confirm: 'Видалити запис?' }, remote: true , class: 'btn btn-xs btn-danger glyphicon glyphicon-remove' %>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+<% end %>

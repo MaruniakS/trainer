@@ -1,4 +1,4 @@
-<%= form_for([current_user, current_user.parameters.build], html: {class: 'form-inline'}, remote: true)do |f|%>
+<%= form_for([current_user, param], html: {class: 'form-inline'}, remote: true)do |f|%>
     <div class="form-group">
       <%= f.text_field :height, class: 'form-control', placeholder: 'Ріст'%>
     </div>
