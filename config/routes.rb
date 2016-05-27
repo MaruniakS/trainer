@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :programs, controller: 'programs', as: 'training_programs'
     resources :parameters, controller: 'parameters'
+    resources :events, controller: 'events'
   end
 
   # Edit program

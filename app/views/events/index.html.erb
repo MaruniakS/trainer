@@ -1,0 +1,24 @@
+<section id="events">
+  <div class="container" id="head">
+    <div class="section-header">
+      <h2 class="section-title text-center"> Календар тренувань </h2>
+      <p class="text-center"> Організовуйте свій тренувальний процес </p>
+    </div>
+    <div class="row text-center">
+      <div class="col-xs-6 col-sm-6 col-md-3  col-lg-3">
+        <div class="icon-circle">
+          <span> 1 </span>
+          <i class="fa fa-search fa-2x"></i>
+        </div>
+        <h3> Проводьте заміри </h3>
+      </div>
+    </div>
+  </div>
+  <div id="params-form" class="container">
+    <h3 class="text-center">
+      Введіть результати замірів
+    </h3>
+    <%= render partial: 'form', locals: {event: @event} %>
+  </div>
+
+</section>
