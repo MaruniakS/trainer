@@ -43,4 +43,9 @@
         </div>
     <% end %>
   </div>
+  <div class="container">
+    <%= line_chart @parameters.map { |parameter|
+                     {name: parameter.name, data: goal.feats.group_by_week(:created_at).count}
+                   } %>
+  </div>
 </section>

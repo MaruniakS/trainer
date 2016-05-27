@@ -14,7 +14,6 @@ class ParametersController < ApplicationController
   end
 
   def destroy
-    puts params
     @parameter = Parameter.find_by(id: params[:id], user_id: params[:user_id])
     @parameter.destroy unless @parameter.nil?
     @parameters = current_user.parameters
