@@ -87,3 +87,6 @@ gem 'friendly_id', '~> 5.1.0'
 
 # Charts
 gem 'chart-js-rails'
+
+# For reminding
+gem 'whenever', :require => false

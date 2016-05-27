@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
   attr_accessor :roles
   has_many :parameters
-
+  has_many :events
   before_create :set_default_role
 
   ROLES = %i[admin moderator trainer user banned]
@@ -54,6 +54,11 @@ class User < ActiveRecord::Base
 
   def facebook
     identities.where(:provider => 'facebook' ).first
+  end
+
+  def self.start
+    Event.create(name: 'a')
+    puts Event.count
   end
 
   private
