@@ -1,7 +1,39 @@
 <section id="parameters">
-  <div class="section-header">
-    <h2 class="section-title text-center"> Щоденник прогресу </h2>
-    <p class="text-center">  </p>
+  <div class="container" id="head">
+    <div class="section-header">
+      <h2 class="section-title text-center"> Щоденник прогресу </h2>
+      <p class="text-center"> Слідкуйте за своїми змінами </p>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-3 col-sm-6 col-xs-6 col-lg-3">
+        <div class="icon-circle">
+          <span> 1 </span>
+          <i class="fa fa-user fa-2x"></i>
+        </div>
+        <h3> Проводьте заміри </h3>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-6 col-lg-3">
+        <div class="icon-circle">
+          <span>2</span>
+          <i class="fa fa-lightbulb-o  fa-2x"></i>
+        </div>
+        <h3> Зберігайте результати </h3>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-6 col-lg-3">
+        <div class="icon-circle">
+          <span>3</span>
+          <i class="fa fa-venus-mars  fa-2x"></i>
+        </div>
+        <h3> Вивчайте зміни </h3>
+      </div>
+      <div class="col-md-3 col-sm-4 col-xs-6 col-lg-3">
+        <div class="icon-circle">
+          <span>4</span>
+          <i class="fa fa-heartbeat fa-2x"></i>
+        </div>
+        <h3> Робіть висновки </h3>
+      </div>
+    </div>
   </div>
   <div id="params-container" class="container">
     <%= render partial: 'parameters_list', locals: {parameters: @parameters} %>

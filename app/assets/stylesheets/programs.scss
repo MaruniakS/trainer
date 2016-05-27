@@ -383,10 +383,14 @@
 }
 
 #process {
-  padding: 100px 0 50px;
-  background: #20222e asset-url('common/bg') no-repeat 0 0;
-  background-size: cover;
-  color: #fff;
+  #head {
+    width: 100%;
+    background: #20222e asset-url('common/bg') no-repeat 0 0;
+    background-size: cover;
+    color: #fff;
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
 }
 #process h2 {
   color: #fff;

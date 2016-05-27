@@ -3,7 +3,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #parameters {
-  padding: 100px 0;
+  #head {
+    width: 100%;
+    background: #20222e asset-url('common/bg') no-repeat 0 0;
+    background-size: cover;
+    color: #fff;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    h2, h3 {
+      color: #fff;
+    }
+    .icon-circle {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      border: 2px solid rgba(180 , 20, 20, 1); /*#45aed6;*/
+      border-radius: 100px;
+      position: relative;
+    }
+    .icon-circle > span {
+      border: 2px solid rgba(180 , 20, 20, 1); /*#45aed6;*/
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      line-height: 20px;
+      top: -12px;
+      color: #64686d;
+    }
+  }
   td, th {
     text-align: center;
   }
