@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :training_programs, foreign_key: :user_id
   attr_accessor :login
   attr_accessor :roles
+  has_many :parameters
 
   before_create :set_default_role
 

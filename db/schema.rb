@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160515110802) do
+ActiveRecord::Schema.define(version: 20160527075429) do
 
   create_table "exercise_analogs", force: :cascade do |t|
     t.integer  "exercise_id"
@@ -84,6 +84,26 @@ ActiveRecord::Schema.define(version: 20160515110802) do
     t.integer  "muscle_group_image_file_size"
     t.datetime "muscle_group_image_updated_at"
   end
+
+  create_table "parameters", force: :cascade do |t|
+    t.integer  "user_id"
+    t.date     "date"
+    t.integer  "height"
+    t.integer  "weight"
+    t.float    "neck"
+    t.float    "shoulders"
+    t.float    "chest"
+    t.float    "biceps"
+    t.float    "forearm"
+    t.float    "waist"
+    t.float    "hip"
+    t.float    "thigh"
+    t.float    "calf"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "parameters", ["user_id"], name: "index_parameters_on_user_id"
 
   create_table "program_types", force: :cascade do |t|
     t.string   "name"

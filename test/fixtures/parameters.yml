@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  date: 2016-05-27
+  height: 1
+  weight: 1
+  neck: 1.5
+  shoulders: 1.5
+  chest: 1.5
+  biceps: 1.5
+  forearm: 1.5
+  waist: 1.5
+  hip: 1.5
+  calf: 1.5
+
+two:
+  user_id: 
+  date: 2016-05-27
+  height: 1
+  weight: 1
+  neck: 1.5
+  shoulders: 1.5
+  chest: 1.5
+  biceps: 1.5
+  forearm: 1.5
+  waist: 1.5
+  hip: 1.5
+  calf: 1.5
