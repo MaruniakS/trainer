@@ -5,6 +5,10 @@ class Event < ActiveRecord::Base
     self.sent
   end
 
+  def correct_time
+    self.time.strftime('%H:%M').to_time
+  end
+
   def email?
     self.email
   end

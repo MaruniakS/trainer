@@ -21,14 +21,8 @@ set :output, {:error => "log/cron.log", :standard => "log/cron.log"}
 # end
 
 # Learn more: http://github.com/javan/whenever
-=begin
+
 
 every 1.minute do
   runner "User.remind", :environment => "development"
 end
-=end
-=begin
-every 1.minute do
-  runner "User.remind", :environment => "development"
-end
-=end
