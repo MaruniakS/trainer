@@ -681,13 +681,13 @@ pt1 = ProgramType.create(name: 'Набір маси')
 pt2 = ProgramType.create(name: 'Схуднення')
 pt3 = ProgramType.create(name: 'Збільшення сили')
 
-td1 = TrainingDay.create
-td2 = TrainingDay.create
-td3 = TrainingDay.create
-td4 = TrainingDay.create
-td5 = TrainingDay.create
-td6 = TrainingDay.create
-td7 = TrainingDay.create
+td1 = TrainingDay.create(description: 'День 1')
+td2 = TrainingDay.create(description: 'День 2')
+td3 = TrainingDay.create(description: 'День 3')
+td4 = TrainingDay.create(description: 'День 4')
+td5 = TrainingDay.create(description: 'День 5')
+td6 = TrainingDay.create(description: 'День 6')
+td7 = TrainingDay.create(description: 'День 7')
 
 TrainingDayExercise.create(training_day: td1, exercise: ex60, rest: 1, sets: 4, repetitions: 8)
 TrainingDayExercise.create(training_day: td1, exercise: ex61, rest: 1, sets: 4, repetitions: 8)

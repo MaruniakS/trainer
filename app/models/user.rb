@@ -56,6 +56,19 @@ class User < ActiveRecord::Base
     identities.where(:provider => 'facebook' ).first
   end
 
+  def training_days
+    programs = self.training_programs
+    days = []
+    programs.each do |p|
+      p.training_days.each do |t|
+        if t.training_day_exercises.count > 0
+          days << ["#{p.name} - #{t.description}", t.id]
+        end
+      end
+    end
+    days
+  end
+
   def self.remind
     events = Event.includes(:user, :training_day).all
     #day = Date.today.wday

@@ -4,4 +4,6 @@ class Event < ActiveRecord::Base
   def sent?
     self.sent
   end
+
+  DAYNAMES = %w(Понеділок Вівторок Середа Четвер П’ятниця Субота Неділя)
 end

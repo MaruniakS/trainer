@@ -39,8 +39,7 @@
         <%= "id=day#{index+1}"%> class="tab-pane fade col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <% end %>
         <h3>
-          День <%= index+1 %>
-          <%= "(#{day.description})" unless day.description.nil? || day.description.empty?  %>
+          <%=  (day.description.nil? || day.description.empty?) ? "День #{index + 1}" : "#{day.description}"   %>
         </h3>
       <% day.training_day_exercises.each do |exercise_day| %>
         <%= link_to exercise_day.exercise, class: 'day-exercise-link col-xs-12 col-sm-12 col-md-12 col-lg-12' do %>
