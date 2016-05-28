@@ -83,6 +83,7 @@ class User < ActiveRecord::Base
           if (time < 3600.0 && time > 0 )
             event.sent = true
             EventMailer.send_remind_email(event).deliver_now if event.email?
+            send_sms
           end
         end
       end
@@ -93,5 +94,22 @@ class User < ActiveRecord::Base
   private
   def set_default_role
     self.roles=['user']
+  end
+
+  def send_sms
+    number_to_send_to = '+380988022880'
+
+    twilio_sid = ENV["TWILIO_ID"]
+    twilio_token = ENV["TWILIO_TOKEN"]
+    twilio_phone_number = ENV["TWILIO_NUMBER"]
+
+    @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
+    message = 'Test'
+
+    @twilio_client.account.sms.messages.create(
+        :from => "#{twilio_phone_number}",
+        :to => number_to_send_to,
+        :body => message
+    )
   end
 end

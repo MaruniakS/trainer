@@ -97,3 +97,6 @@ gem 'whenever', :require => false
 gem 'premailer-rails'
 gem 'nokogiri'
 
+# For SMS
+gem 'twilio-ruby'
+
