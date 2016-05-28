@@ -90,26 +90,24 @@ class User < ActiveRecord::Base
       event.save
     end
   end
-
+  def send_sms
+    @twilio_number = ENV['TWILIO_NUMBER']
+    puts @twilio_number
+    @client = Twilio::REST::Client.new(ENV['TWILIO_ID'], ENV['TWILIO_TOKEN'])
+    puts ENV['TWILIO_ID']
+    puts ENV['TWILIO_TOKEN']
+    reminder = "Test"
+    message = @client.account.messages.create(
+        :from => @twilio_number,
+        :to => '+380988022880',
+        :body => reminder,
+    )
+    puts message.to
+  end
   private
   def set_default_role
     self.roles=['user']
   end
 
-  def send_sms
-    number_to_send_to = '+380988022880'
 
-    twilio_sid = ENV["TWILIO_ID"]
-    twilio_token = ENV["TWILIO_TOKEN"]
-    twilio_phone_number = ENV["TWILIO_NUMBER"]
-
-    @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
-    message = 'Test'
-
-    @twilio_client.account.sms.messages.create(
-        :from => "#{twilio_phone_number}",
-        :to => number_to_send_to,
-        :body => message
-    )
-  end
 end
