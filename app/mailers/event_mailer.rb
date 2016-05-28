@@ -2,10 +2,10 @@ require 'mail'
 class EventMailer < ApplicationMailer
   default from: 'trainer.sup@gmail.com'
 
-  def send_remind_email(name, time, email)
-    address = Mail::Address.new email
+  def send_remind_email(event)
+    address = Mail::Address.new 'trainer.sup@gmail.com'
     address.display_name = 'Personal Fitness Trainer'
-    @name, @time = name, time
-    mail(to: email, subject: 'Нагадування')
+    @event = event
+    mail(to: event.email, subject: 'Нагадування')
   end
 end

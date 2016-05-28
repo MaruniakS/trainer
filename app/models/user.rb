@@ -75,14 +75,14 @@ class User < ActiveRecord::Base
     events.each do |event|
       if day == event.day
         if event.sent?
-          if Time.now - event.correct_time < 0
+          if Time.now - event.correct_time > 0
             event.sent = false
           end
         else
           time = event.correct_time - Time.now
           if (time < 3600.0 && time > 0 )
             event.sent = true
-            EventMailer.send_remind_email(event.name, event.correct_time, event.user.email).deliver_now
+            EventMailer.send_remind_email(event).deliver_now
           end
         end
       end

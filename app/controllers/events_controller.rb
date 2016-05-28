@@ -6,6 +6,10 @@ class EventsController < ApplicationController
     @days = current_user.training_days
   end
 
+  def show
+    @event = Event.find(params[:id])
+  end
+
   def create
     @event = current_user.events.create(event_params)
     @event.sent = false

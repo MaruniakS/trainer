@@ -12,6 +12,17 @@
     }
   }
   #events-container {
+    .exercise-info {
+      padding: 10px 0;
+      display: flex;
+      .img-responsive {
+        max-height: 100px;
+        padding-right: 40px;
+      }
+      > .inline {
+        align-self: center;
+      }
+    }
     ul,li{
       list-style:none;
     }
