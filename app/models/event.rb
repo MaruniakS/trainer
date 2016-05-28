@@ -5,5 +5,5 @@ class Event < ActiveRecord::Base
     self.sent
   end
 
-  DAYNAMES = %w(Понеділок Вівторок Середа Четвер П’ятниця Субота Неділя)
+  DAYNAMES = %w(Неділя Понеділок Вівторок Середа Четвер П’ятниця Субота)
 end
