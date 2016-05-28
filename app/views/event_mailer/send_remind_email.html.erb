@@ -2,6 +2,51 @@
 <html>
 <head>
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <style type="text/css" media="screen">
+      #events-container .exercise-info {
+          padding: 10px 0;
+          display: flex;
+      }
+      #events-container .exercise-info .img-responsive {
+          max-height: 100px;
+          padding-right: 40px;
+      }
+
+      #events-container .exercise-info > .inline {
+         align-self: center;
+      }
+
+      #events-container ul, #events-container li{
+          list-style:none;
+      }
+      #events-container ul {
+          overflow: hidden;
+          padding: 3em;
+      }
+      li {
+          margin: 1em;
+          float: left;
+      }
+      h2{
+          font-weight:bold;
+          padding-bottom:10px;
+      }
+      .event {
+          color:#000;
+          background:#ffc;
+          display:block;
+          padding:1em;
+          /* Firefox */
+          -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+          /* Safari+Chrome */
+          -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+          /* Opera */
+          box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+      }
+       .inline {
+             display: inline-block;
+        }
+  </style>
 </head>
 <body>
 <div id="events">
@@ -9,7 +54,7 @@
     <ul>
       <li>
         <div class="event">
-          <h2> <%= @event.name %></h2>
+          <h2><%= @event.name %> </h2>
           <p>
             До запланованого тренування залишилося <%= (@event.correct_time - Time.now).to_i.abs / 60 %> хв.
           </p>
@@ -27,11 +72,11 @@
                 </div>
                 <div class="inline">
                   <h4> <%= pair.exercise.name %> </h4>
-                  <%= image_tag('common/sets.svg') %>
+                  <%= image_tag('common/sets.svg', alt: 'sets') %>
                   <p class="inline"><%= pair.sets %></p>
-                  <%= image_tag('common/repetitions.svg')%>
+                  <%= image_tag('common/repetitions.svg', alt: 'repetitions')%>
                   <p class="inline"> <%= pair.repetitions %></p>
-                  <%= image_tag('common/rest.svg')%>
+                  <%= image_tag('common/rest.svg', alt: 'rest')%>
                   <p class="inline"> <%= pair.rest %></p>
                 </div>
 

@@ -6,6 +6,6 @@ class EventMailer < ApplicationMailer
     address = Mail::Address.new 'trainer.sup@gmail.com'
     address.display_name = 'Personal Fitness Trainer'
     @event = event
-    mail(to: event.email, subject: 'Нагадування')
+    mail(to: event.user.email, subject: 'Нагадування')
   end
 end

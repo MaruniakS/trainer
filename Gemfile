@@ -93,3 +93,7 @@ gem 'chart-js-rails'
 # For reminding
 gem 'whenever', :require => false
 
+# For email styling
+gem 'premailer-rails'
+gem 'nokogiri'
+
