@@ -70,7 +70,6 @@ class User < ActiveRecord::Base
   end
 
   def self.remind
-    puts 'in  remind'
     events = Event.includes(:user, :training_day).all
     day = Date.today.wday
     events.each do |event|
@@ -83,8 +82,7 @@ class User < ActiveRecord::Base
           time = event.correct_time - Time.now
           if (time < 3600.0 && time > 0 )
             event.sent = true
-            puts 'have to send?'
-            EventMailer.send_remind_email(event).deliver_now
+            EventMailer.send_remind_email(event).deliver_now if event.email?
           end
         end
       end
