@@ -83,7 +83,7 @@ class User < ActiveRecord::Base
           if (time < 3600.0 && time > 0 )
             event.sent = true
             EventMailer.send_remind_email(event).deliver_now if event.email?
-            send_sms
+            send_sms if event.sms?
           end
         end
       end
