@@ -5,5 +5,13 @@ class Event < ActiveRecord::Base
     self.sent
   end
 
+  def email?
+    self.email
+  end
+
+  def sms?
+    self.sms
+  end
+
   DAYNAMES = %w(Неділя Понеділок Вівторок Середа Четвер П’ятниця Субота)
 end

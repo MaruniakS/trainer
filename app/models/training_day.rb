@@ -1,10 +1,12 @@
 class TrainingDay < ActiveRecord::Base
   has_many :training_day_exercises, dependent: :destroy
   has_many :exercises, through: :training_day_exercises
-  [:first_day, :second_day, :third_day, :fourth_day, :fifth_day, :sixth_day, :seventh_day].each do |day|
-    has_many :training_programs, foreign_key: day
-  end
 
+  def training_programs(user)
+    programs = TrainingProgram.where(user: user)
+    programs.where('first_day_id= ? OR second_day_id= ? OR third_day_id= ? OR fourth_day_id= ? OR fifth_day_id= ? OR sixth_day_id= ? OR seventh_day_id= ?',
+                   self.id, self.id, self.id, self.id, self.id, self.id, self.id,)
+  end
 
   def has_exercises?
     exercises.count > 0 ? true : false

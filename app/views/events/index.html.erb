@@ -34,5 +34,8 @@
     </h3>
     <%= render partial: 'form', locals: {event: @event} %>
   </div>
+  <div id="events-container" class="container">
+    <%= render partial: 'events_list', locals: {events: @events} %>
+  </div>
 
 </section>
