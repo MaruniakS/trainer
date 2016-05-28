@@ -36,7 +36,7 @@
           <h1> Щоденник прогресу </h1>
           <p> Слідкуй за своїм прогресом, проводячи заміри та відслідковуючи різницю</p>
           <p>
-            <%= link_to 'Завести щоденник', all_programs_path, class:'btn btn-lg carousel-button', role: 'button' %>
+            <%= link_to 'Завести щоденник', user_signed_in? ? user_parameters_path(current_user) : new_user_registration_path, class:'btn btn-lg carousel-button', role: 'button' %>
           </p>
         </div>
       </div>

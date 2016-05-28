@@ -1,3 +1,14 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#events {
+  .fa-mobile-phone {
+    margin-top: 10px;
+  }
+  #params-form {
+    h3 {
+      padding-bottom: 30px;
+    }
+  }
+}

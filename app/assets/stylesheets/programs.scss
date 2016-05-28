@@ -343,6 +343,7 @@
     background-image: asset-url('programs/individual');
     height: 100vh;
     @extend .image-resp;
+
     .container {
       position: relative;
       height: 100%;
@@ -390,6 +391,9 @@
     color: #fff;
     padding-top: 75px;
     padding-bottom: 75px;
+    .fa-lightbulb-o, .fa-venus-mars {
+      margin-top: 10px;
+    }
   }
 }
 #process h2 {

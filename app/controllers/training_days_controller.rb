@@ -1,4 +1,5 @@
 class TrainingDaysController < ApplicationController
+  before_action  :authenticate_user!
   def edit
     @tday = TrainingDay.find(params[:day])
     exercise = Exercise.find(params[:exercise])

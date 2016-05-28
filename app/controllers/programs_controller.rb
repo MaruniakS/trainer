@@ -1,6 +1,7 @@
 class ProgramsController < ApplicationController
   before_action :check_user, only: [:index]
   before_action :program_info, only: [:show, :common_program]
+  before_action  :authenticate_user!, except: [:all_programs, :common_program, :assign_to_user, :filter, :individual]
   def index
     @user = current_user
     @programs = @user.training_programs

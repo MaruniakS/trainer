@@ -36,7 +36,7 @@
             </div>
           </li>
           <li id="time-line-3">
-            <%= link_to '', root_path, {class: 'timeline-image image-align'}%>
+            <%= link_to '', user_signed_in? ? user_events_path(current_user) : new_user_registration_path, {class: 'timeline-image image-align'}%>
             <div class="timeline-panel">
               <div class="timeline-heading">
                 <h4><br></h4>
@@ -48,7 +48,7 @@
             </div>
           </li>
           <li id="time-line-4" class="timeline-inverted">
-            <%= link_to '', root_path, {class: 'timeline-image image-align'}%>
+            <%= link_to '', user_signed_in? ? user_parameters_path(current_user) : new_user_registration_path, {class: 'timeline-image image-align'}%>
             <div class="timeline-panel">
               <div class="timeline-heading">
                 <h4><br></h4>

@@ -1,5 +1,8 @@
 class ParametersController < ApplicationController
+  before_action  :authenticate_user!
+
   include ChartData
+
   def index
     @parameter = Parameter.new
     @parameters = user_parameters
