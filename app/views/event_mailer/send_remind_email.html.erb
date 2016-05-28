@@ -15,8 +15,8 @@
           </p>
           <p> День: <%= Event::DAYNAMES[@event.day] %></p>
           <p> Час: <%= @event.correct_time.strftime('%H:%M') %> </p>
-          <% program = @event.training_day.training_programs(current_user).first %>
-          <%= link_to user_training_program_path(current_user, program.id), class: 'btn btn-sm btn-success' do %>
+          <% program = @event.training_day.training_programs(@event.user).first %>
+          <%= link_to user_training_program_path(@event.user, program.id), class: 'btn btn-sm btn-success' do %>
               <%= "#{program.name}:" %>
               <%= "#{@event.training_day.description}" %>
           <% end %>
