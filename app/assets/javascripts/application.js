@@ -14,6 +14,7 @@
 //= require jquery.waypoints
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require bootstrap-timepicker
 //= require bootstrap-multiselect
 //= require Chart
 //= require bootstrap-sprockets

@@ -8,6 +8,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'autoprefixer-rails'
 gem 'bootstrap-multiselect-rails'
+gem 'bootstrap-timepicker-rails'
+#gem 'jquery-timepicker-rails'
 
 # Turbolinks
 gem 'jquery-turbolinks'
@@ -90,3 +92,4 @@ gem 'chart-js-rails'
 
 # For reminding
 gem 'whenever', :require => false
+
