@@ -43,7 +43,7 @@
         </h3>
       <% day.training_day_exercises.each do |exercise_day| %>
         <%= link_to exercise_day.exercise, class: 'day-exercise-link col-xs-12 col-sm-12 col-md-12 col-lg-12' do %>
-          <div class="day-exercise-container red-shadow-box row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="training-day-exercise row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
               <%= image_tag(exercise_day.exercise.exercise_image.url) %>
             </div>

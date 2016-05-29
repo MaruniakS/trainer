@@ -144,12 +144,7 @@
 }
 
 .day-exercise-container{
-  div {
-    img {
-      max-height: 150px;
-      padding: 10px;
-    }
-  }
+
 }
 
 
@@ -278,6 +273,24 @@
           }
         }
       }
+    }
+  }
+  .training-day-exercise {
+    color:#000;
+    background:#ffc;
+    display:block;
+    padding:1em;
+    /* Firefox */
+    -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+    /* Safari+Chrome */
+    -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    /* Opera */
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  }
+  div {
+    img {
+      max-height: 150px;
+      padding: 10px;
     }
   }
 }
