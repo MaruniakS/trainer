@@ -90,7 +90,6 @@ class User < ActiveRecord::Base
             if event.sms?
               program = event.training_day.training_programs(event.user).first
               message = "#{event.name} через #{time.to_i.abs / 60} хв. #{program.name}:#{event.training_day.description}"
-              puts message
               send_sms(message)
             end
           end

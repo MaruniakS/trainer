@@ -21,8 +21,6 @@ module TrainingProgramGenerator
     private
     def male_ectomorph_weight
       days = Array.new(7) {TrainingDay.create}
-      puts '*'*100
-      puts days
       #day 1
       group1 = Exercise.where(muscle_group_id: 6)
       ex1 = group1.first

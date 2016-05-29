@@ -30,7 +30,8 @@ class ProgramsController < ApplicationController
 
   def create_individual
     @program = TrainingProgram.generate_program(individual_params, current_user)
-    redirect_to [current_user, @program]
+    render json: @program
+    #redirect_to [current_user, @program]
   end
 
   def filter
@@ -74,6 +75,6 @@ class ProgramsController < ApplicationController
   end
 
   def individual_params
-    params.permit(:program_type_id, :body_type, :male_type, :age, :joint_pain, :workout_1, :workout_2, :workout_3)
+    params.permit(:program_type_id, :body_type, :male_type, :age, :workout_1, :workout_2, :workout_3, joint_pain: [])
   end
 end
