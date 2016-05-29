@@ -12,7 +12,7 @@
                   Ціль тренувань:
                 </div>
                 <div class="block-info">
-                  <%= program.program_type.name.present? ? program.program_type.name : 'Будь-яка' %>
+                  <%= !program.program_type.nil? && program.program_type.name.present?  ? program.program_type.name : 'Будь-яка' %>
                 </div>
               </div>
               <div class="description-block inline">

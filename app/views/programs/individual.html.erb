@@ -89,6 +89,22 @@
       </div>
       <div class="row">
         <div class="col-sm-2 col-md-2 col-lg-4"></div>
+        <label class="col-xs-6 col-sm-3 col-md-3 col-lg-1 control-label"> Ріст: </label>
+        <div class="col-xs-6 col-sm-5 col-md-5 col-lg-3">
+          <%= text_field_tag :height, '', {class: 'form-control', placeholder: 'у м'} %>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
+        <label class="col-xs-6 col-sm-3 col-md-3 col-lg-1 control-label"> Вага: </label>
+        <div class="col-xs-6 col-sm-5 col-md-5 col-lg-3">
+          <%= text_field_tag :weight, '', {class: 'form-control', placeholder: 'у кг'} %>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2 col-md-2 col-lg-4"></div>
         <label class="col-xs-6 col-sm-3 col-md-3 col-lg-1 control-label"> Болі в суглобах: </label>
         <div class="col-xs-6 col-sm-5 col-md-5 col-lg-3">
           <%= select_tag :joint_pain, options_for_select(TrainingProgram.joint_pains.keys.to_a),{ id: 'joint-select', class: 'form-control', multiple: true}  %>

@@ -186,7 +186,7 @@ ex20.steps(description)
 
 des = ''
 url = ''
-ex21 = Exercise.create(name: 'Жим штанги зі зворотнім нахилом', muscle_group: chest, description: des, youtube_url: url)
+ex21 = Exercise.create(name: 'Жим штанги на похилій лаві', muscle_group: chest, description: des, youtube_url: url)
 description = 'Візьміть штангу середнім або широким хватом та зніміть її з опорів.
 Початковим положенням є упор штанги на витягнутих руках.
 Вправа ділиться на дві фази: вдих - опускання штанги, видих - підняття.
@@ -359,17 +359,6 @@ description = 'Сядьте на лавку, обхопіть гриф гант�
 ex35.steps(description)
 
 
-des = ''
-url = ''
-ex36= Exercise.create(name: 'Поперемінний підйом гантелей', muscle_group: biceps, description: des, youtube_url: url)
-description = 'Сядьте на лавку, обхопіть гриф гантелі кожною рукою хватом "в замок", опустіть їх на витягнутих руках вниз.
-Корпус тримайте прямим, уникайте непотрібного скруглення спини в хребті.
-Напружте біцепси і зігніть руку в ліктьовому суглобі.
-Піднявши, таким чином, гантель до відповідного плеча, без затримки починайте опускати її назад.
-Опускайте гантель повільніше, ніж піднімаєте, але у будь-якому випадку, ривків і непотрібного поспіху бути не повинно в обидві фази руху.
-Лікті увесь час щільно притиснуті до тулуба, усі рухи здійснюються тільки в ліктьових суглобах, плечі і променезап’ясткові абсолютно статичні.
-Зігнувши і розігнувши одну руку, починайте згинати другу, або, якщо хочете попрацювати інтенсивніше, починайте виконувати вправу другою рукою, як тільки перша почала опускатися.'
-ex36.steps(description)
 
 
 #-------------------Triceps----------------------->
@@ -456,7 +445,7 @@ ex50.steps(description)
 
 des = ''
 url = ''
-ex51 = Exercise.create(name: 'Жим гантелей сидячия', muscle_group: shoulders, description: des, youtube_url: url)
+ex51 = Exercise.create(name: 'Жим гантелей сидячи', muscle_group: shoulders, description: des, youtube_url: url)
 description = 'Підберіть необхідні гантелі, сядьте, і підніміть їх до рівня ключиць, великі пальці рук при цьому спрямовані до зовні, кисті з гантелями (повернені до себе).
 Хребет випрямлений, лікті знаходяться в площині тіла.
 На вдиху зусиллям дельтовидних м`язів підніміть руки з гантелями вгору, стежте, щоб вони рухалися тільки у фронтальній площині, а лікті не відхилялися назад.
@@ -681,6 +670,8 @@ pt1 = ProgramType.create(name: 'Набір маси')
 pt2 = ProgramType.create(name: 'Схуднення')
 pt3 = ProgramType.create(name: 'Збільшення сили')
 
+# Ectomorph standard program
+
 td1 = TrainingDay.create(description: 'День 1')
 td2 = TrainingDay.create(description: 'День 2')
 td3 = TrainingDay.create(description: 'День 3')
@@ -689,20 +680,96 @@ td5 = TrainingDay.create(description: 'День 5')
 td6 = TrainingDay.create(description: 'День 6')
 td7 = TrainingDay.create(description: 'День 7')
 
-TrainingDayExercise.create(training_day: td1, exercise: ex60, rest: 1, sets: 4, repetitions: 8)
-TrainingDayExercise.create(training_day: td1, exercise: ex61, rest: 1, sets: 4, repetitions: 8)
+TrainingDayExercise.create(training_day: td1, exercise: ex60, rest: 3, sets: 3, repetitions: 8)
+TrainingDayExercise.create(training_day: td1, exercise: ex61, rest: 2, sets: 3, repetitions: 8)
+TrainingDayExercise.create(training_day: td1, exercise: ex53, rest: 2, sets: 3, repetitions: 6)
+TrainingDayExercise.create(training_day: td1, exercise: ex51, rest: 2, sets: 2, repetitions: 8)
+
+TrainingDayExercise.create(training_day: td3, exercise: ex20, rest: 3, sets: 3, repetitions: 8)
+TrainingDayExercise.create(training_day: td3, exercise: ex23, rest: 2, sets: 3, repetitions: 8)
+TrainingDayExercise.create(training_day: td3, exercise: ex22, rest: 2, sets: 3, repetitions: 10)
+TrainingDayExercise.create(training_day: td3, exercise: ex41, rest: 2, sets: 3, repetitions: 8)
+TrainingDayExercise.create(training_day: td3, exercise: ex43, rest: 2, sets: 2, repetitions: 8)
+
+TrainingDayExercise.create(training_day: td5, exercise: ex5, rest: 2, sets: 2, repetitions: 10)
+TrainingDayExercise.create(training_day: td5, exercise: ex1, rest: 3, sets: 3, repetitions: 8)
+TrainingDayExercise.create(training_day: td5, exercise: ex2, rest: 3, sets: 2, repetitions: 8)
+TrainingDayExercise.create(training_day: td5, exercise: ex31, rest: 2, sets: 3, repetitions: 8)
+
+TrainingProgram.create(name: 'Програма тренувань для ектоморфа', body_type: 0, male_type: 0, first_day: td1,
+                       second_day: td2, third_day: td3, fourth_day: td4,fifth_day: td5, sixth_day: td6,seventh_day: td7, user: admin)
+
+# Mesomorph standard
+
+td1 = TrainingDay.create(description: 'День 1')
+td2 = TrainingDay.create(description: 'День 2')
+td3 = TrainingDay.create(description: 'День 3')
+td4 = TrainingDay.create(description: 'День 4')
+td5 = TrainingDay.create(description: 'День 5')
+td6 = TrainingDay.create(description: 'День 6')
+td7 = TrainingDay.create(description: 'День 7')
+
+TrainingDayExercise.create(training_day: td1, exercise: ex5, rest: 2, sets: 2, repetitions: 8)
+TrainingDayExercise.create(training_day: td1, exercise: ex1, rest: 2, sets: 3, repetitions: 8)
+TrainingDayExercise.create(training_day: td1, exercise: ex2, rest: 2, sets: 3, repetitions: 12)
+TrainingDayExercise.create(training_day: td1, exercise: ex52, rest: 2, sets: 3, repetitions: 10)
+TrainingDayExercise.create(training_day: td1, exercise: ex54, rest: 2, sets: 3, repetitions: 12)
+TrainingDayExercise.create(training_day: td1, exercise: ex55, rest: 2, sets: 3, repetitions: 12)
+TrainingDayExercise.create(training_day: td1, exercise: ex70, rest: 2, sets: 5, repetitions: 25)
+
+TrainingDayExercise.create(training_day: td3, exercise: ex20, rest: 2, sets: 3, repetitions: 10)
+TrainingDayExercise.create(training_day: td3, exercise: ex21, rest: 2, sets: 3, repetitions: 12)
+TrainingDayExercise.create(training_day: td3, exercise: ex25, rest: 2, sets: 2, repetitions: 12)
+TrainingDayExercise.create(training_day: td3, exercise: ex31, rest: 2, sets: 4, repetitions: 10)
+TrainingDayExercise.create(training_day: td3, exercise: ex35, rest: 2, sets: 3, repetitions: 12)
+TrainingDayExercise.create(training_day: td3, exercise: ex41, rest: 2, sets: 4, repetitions: 10)
+TrainingDayExercise.create(training_day: td3, exercise: ex43, rest: 2, sets: 3, repetitions: 12)
+TrainingDayExercise.create(training_day: td3, exercise: ex71, rest: 2, sets: 3, repetitions: 25)
+
+TrainingDayExercise.create(training_day: td5, exercise: ex60, rest: 2, sets: 3, repetitions: 10)
+TrainingDayExercise.create(training_day: td5, exercise: ex61, rest: 2, sets: 3, repetitions: 10)
+TrainingDayExercise.create(training_day: td5, exercise: ex62, rest: 2, sets: 2, repetitions: 12)
+TrainingDayExercise.create(training_day: td5, exercise: ex63, rest: 1, sets: 3, repetitions: 10)
+TrainingDayExercise.create(training_day: td5, exercise: ex65, rest: 1, sets: 4, repetitions: 15)
+TrainingDayExercise.create(training_day: td5, exercise: ex70, rest: 1, sets: 3, repetitions: 25)
+
+TrainingProgram.create(name: 'Програма тренувань для мезоморфа',  body_type: 1, male_type: 0, first_day: td1,
+                       second_day: td2, third_day: td3, fourth_day: td4,fifth_day: td5, sixth_day: td6,seventh_day: td7, user: admin)
+
+# Endomorph standard
+
+td1 = TrainingDay.create(description: 'День 1')
+td2 = TrainingDay.create(description: 'День 2')
+td3 = TrainingDay.create(description: 'День 3')
+td4 = TrainingDay.create(description: 'День 4')
+td5 = TrainingDay.create(description: 'День 5')
+td6 = TrainingDay.create(description: 'День 6')
+td7 = TrainingDay.create(description: 'День 7')
+
+TrainingDayExercise.create(training_day: td1, exercise: ex60, rest: 2, sets: 4, repetitions: 15)
+TrainingDayExercise.create(training_day: td1, exercise: ex61, rest: 2, sets: 3, repetitions: 12)
+TrainingDayExercise.create(training_day: td1, exercise: ex62, rest: 2, sets: 3, repetitions: 15)
+TrainingDayExercise.create(training_day: td1, exercise: ex63, rest: 1, sets: 3, repetitions: 12)
 TrainingDayExercise.create(training_day: td1, exercise: ex52, rest: 1, sets: 4, repetitions: 10)
-TrainingDayExercise.create(training_day: td1, exercise: ex50, rest: 1, sets: 3, repetitions: 10)
+TrainingDayExercise.create(training_day: td1, exercise: ex51, rest: 1, sets: 3, repetitions: 12)
+TrainingDayExercise.create(training_day: td1, exercise: ex70, rest: 1, sets: 3, repetitions: 25)
+TrainingDayExercise.create(training_day: td1, exercise: ex71, rest: 1, sets: 3, repetitions: 15)
 
-TrainingDayExercise.create(training_day: td3, exercise: ex20, rest: 1, sets: 4, repetitions: 8)
-TrainingDayExercise.create(training_day: td3, exercise: ex23, rest: 1, sets: 3, repetitions: 10)
-TrainingDayExercise.create(training_day: td3, exercise: ex22, rest: 1, sets: 3, repetitions: 10)
-TrainingDayExercise.create(training_day: td3, exercise: ex41, rest: 1, sets: 3, repetitions: 10)
+TrainingDayExercise.create(training_day: td3, exercise: ex20, rest: 2, sets: 4, repetitions: 12)
+TrainingDayExercise.create(training_day: td3, exercise: ex24, rest: 2, sets: 3, repetitions: 12)
+TrainingDayExercise.create(training_day: td3, exercise: ex25, rest: 2, sets: 3, repetitions: 15)
+TrainingDayExercise.create(training_day: td3, exercise: ex41, rest: 1, sets: 3, repetitions: 12)
+TrainingDayExercise.create(training_day: td3, exercise: ex43, rest: 1, sets: 3, repetitions: 12)
+TrainingDayExercise.create(training_day: td3, exercise: ex70, rest: 1, sets: 3, repetitions: 25)
+TrainingDayExercise.create(training_day: td3, exercise: ex71, rest: 1, sets: 3, repetitions: 15)
 
-TrainingDayExercise.create(training_day: td5, exercise: ex5, rest: 1, sets: 4, repetitions: 10)
-TrainingDayExercise.create(training_day: td5, exercise: ex1, rest: 1, sets: 4, repetitions: 8)
-TrainingDayExercise.create(training_day: td5, exercise: ex2, rest: 1, sets: 3, repetitions: 10)
+TrainingDayExercise.create(training_day: td5, exercise: ex5, rest: 2, sets: 4, repetitions: 12)
+TrainingDayExercise.create(training_day: td5, exercise: ex1, rest: 2, sets: 3, repetitions: 8)
+TrainingDayExercise.create(training_day: td5, exercise: ex2, rest: 2, sets: 3, repetitions: 12)
+TrainingDayExercise.create(training_day: td5, exercise: ex3, rest: 1, sets: 3, repetitions: 10)
 TrainingDayExercise.create(training_day: td5, exercise: ex31, rest: 1, sets: 3, repetitions: 10)
+TrainingDayExercise.create(training_day: td5, exercise: ex70, rest: 1, sets: 3, repetitions: 25)
+TrainingDayExercise.create(training_day: td5, exercise: ex71, rest: 1, sets: 3, repetitions: 15)
 
-TrainingProgram.create(name: 'Набір маси', program_type: pt1, body_type: 0, male_type: 0, first_day: td1,
+TrainingProgram.create(name: 'Програма тренувань для Ендоморфа', body_type: 2, male_type: 0, first_day: td1,
                        second_day: td2, third_day: td3, fourth_day: td4,fifth_day: td5, sixth_day: td6,seventh_day: td7, user: admin)
