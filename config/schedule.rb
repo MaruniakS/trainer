@@ -26,7 +26,9 @@ set :output, {:error => "log/cron.log", :standard => "log/cron.log"}
 every 1.minute do
   runner "User.remind", :environment => "development"
 end
+=begin
 
 every 1.minute do
   runner "User.remind", :environment => "production"
 end
+=end
