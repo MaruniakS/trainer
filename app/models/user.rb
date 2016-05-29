@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  require 'rubygems' # not necessary with ruby 1.9 but included for completeness
+  require 'twilio-ruby'
   extend FriendlyId
   has_many :identities
   has_many :training_programs, foreign_key: :user_id
@@ -77,27 +79,32 @@ class User < ActiveRecord::Base
         if event.sent?
           if Time.now - event.correct_time > 0
             event.sent = false
+            event.save!
           end
         else
           time = event.correct_time - Time.now
           if (time < 3600.0 && time > 0 )
             event.sent = true
+            event.save!
             EventMailer.send_remind_email(event).deliver_now if event.email?
-            send_sms if event.sms?
+            if event.sms?
+              program = event.training_day.training_programs(event.user).first
+              message = "#{event.name} через #{time.to_i.abs / 60} хв. #{program.name}:#{event.training_day.description}"
+              puts message
+              send_sms(message)
+            end
           end
         end
       end
-      event.save
     end
   end
-  def send_sms
-    @twilio_number =  ENV['TWILIO_PHONE_NUMBER']
-    @client = Twilio::REST::Client.new(ENV['TWILIO_ID'], ENV['TWILIO_AUTH_TOKEN'])
-    reminder = "Test"
+  def self.send_sms(body)
+    @twilio_number =  '12056778948'#ENV['TWILIO_PHONE_NUMBER']
+    @client = Twilio::REST::Client.new('ACac3fabd505eeb25b13eb5f59a0e831f9', '744eca4b5153374761dd383fef47bfeb')#ENV['TWILIO_ID'], ENV['TWILIO_AUTH_TOKEN'])
     message = @client.account.sms.messages.create(
-        from: @twilio_number,
-        to: '+380988022880',
-        body: reminder
+        from: "+#{@twilio_number}",
+        to: '+380934943954',
+        body: body
     )
     puts message
   end

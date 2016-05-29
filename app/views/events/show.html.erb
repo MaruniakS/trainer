@@ -4,9 +4,14 @@
       <li>
         <div class="event">
           <h2> <%= @event.name %></h2>
-          <p>
-            До запланованого тренування залишилося <%= (@event.correct_time - Time.now).to_i.abs / 60 %> хв.
-          </p>
+          <% if @event.day == Date.today.wday %>
+             <% if ((@event.correct_time - Time.now < 3600) &&  @event.correct_time - Time.now > 0 ) %>
+                  <p>
+                    До запланованого тренування залишилося <%= (@event.correct_time - Time.now).to_i.abs / 60 %> хв.
+                  </p>
+             <% end %>
+          <% end %>
+
           <p> День: <%= Event::DAYNAMES[@event.day] %></p>
           <p> Час: <%= @event.correct_time.strftime('%H:%M') %> </p>
           <% program = @event.training_day.training_programs(current_user).first %>
