@@ -11,7 +11,7 @@ class TrainingProgram < ActiveRecord::Base
   enum body_type: %w(Ектоморф Мезоморф Ендоморф)
   enum male_type: %w(Чоловік Жінка)
   enum user_age: ['Менше 15', '16-20', '21-30', '31-40', '41-50','51-60', '61-70', 'Більше 70' ]
-  enum joint_pain: %w(Спина Коліна Плечі Лікті Зап’ястя Таз Стопа)
+  enum joint_pain: %w(Колінний Плечевий Ліктевий Поперечний Гомілковостопний )
   has_attached_file :program_image,
                     :path => ':rails_root/public/system/:attachment/:id/:basename_:style.:extension',
                     :url => '/system/:attachment/:id/:basename_:style.:extension',
@@ -28,6 +28,14 @@ class TrainingProgram < ActiveRecord::Base
   def training_days
     ids = [first_day_id, second_day_id, third_day_id, fourth_day_id, fifth_day_id, sixth_day_id, seventh_day_id]
     TrainingDay.where(id: ids)
+  end
+
+  def exercises
+    ex = []
+    training_days.each do |day|
+      ex << day.training_day_exercises.exercise_id
+    end
+    ex
   end
 
   def days_count

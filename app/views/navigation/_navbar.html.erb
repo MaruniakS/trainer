@@ -56,6 +56,9 @@
                 <li>
                   <%= link_to 'Щоденник прогресу', user_parameters_path(current_user) %>
                 </li>
+                <li>
+                  <%= link_to 'Мої програми', user_training_programs_path(current_user) %>
+                </li>
                 <li class="divider"></li>
                 <li><%= link_to 'Вийти', destroy_user_session_path, method: :delete %></li>
 
