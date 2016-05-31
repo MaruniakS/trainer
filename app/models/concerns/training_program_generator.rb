@@ -37,9 +37,7 @@ module TrainingProgramGenerator
 
     private
     def duplicate_days(program, coef, pains)
-        puts '-' * 100
         days = program.training_days
-        puts days
         program.first_day = days[0].dup
         program.second_day = days[1].dup
         program.third_day = days[2].dup
@@ -59,7 +57,6 @@ module TrainingProgramGenerator
             tmp.save!
             possibility(tmp, params[:workout_1], params[:workout_2], params[:workout_3])
           end
-          puts day.exercises.count
         end
     end
 

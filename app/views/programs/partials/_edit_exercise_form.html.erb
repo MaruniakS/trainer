@@ -1,5 +1,5 @@
 <%= form_tag(change_exercise_path(day_exercise: day_exercise, index: index), method: :get, remote: true) do %>
-    <% if !errors.nil? %>
+    <% unless errors.nil? %>
         <div id="error_explanation" class=" alert alert-danger">
           <h2><%= pluralize(errors.count, "error") %> prohibited this exercise from being changed:</h2>
           <ul>
