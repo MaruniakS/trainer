@@ -1,7 +1,7 @@
 class ProgramsController < ApplicationController
   before_action :check_user, only: [:index]
   before_action :program_info, only: [:show, :common_program]
-  before_action  :authenticate_user!, except: [:all_programs, :common_program, :assign_to_user, :filter, :individual, :create_individual]
+  before_action  :authenticate_user!, except: [:all_programs, :common_program, :assign_to_user, :filter]
   def index
     @user = current_user
     @programs = @user.training_programs
@@ -29,10 +29,11 @@ class ProgramsController < ApplicationController
   end
 
   def create_individual
+    #render text: individual_params[:joint_pain]
     #@program = TrainingProgram.generate_program(individual_params, current_user)
     @program = TrainingProgram.generate_program(individual_params, current_user)
-    render json: individual_params
-    #redirect_to [current_user, @program]
+    #render json: @program.training_days[0].training_day_exercises
+    redirect_to user_training_program_path(current_user, @program)
   end
 
   def filter
@@ -76,6 +77,6 @@ class ProgramsController < ApplicationController
   end
 
   def individual_params
-    params.permit(:height, :weight, :program_type_id, :body_type, :male_type, :age, :workout_1, :workout_2, :workout_3, joint_pain: [])
+    params.permit(:height, :weight, :program_type_id, :body_type, :male_type, :age, :workout_1, :workout_2, :workout_3, :user_id, joint_pain: [])
   end
 end
