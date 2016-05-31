@@ -136,11 +136,23 @@ Logo by Sneaker-mission.com (http://www.sneaker-mission.com/)
 
 /* footer */
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow:hidden;
   padding: 50px 0;
   background-color: #f8f8f8;
 }
 
+
 p.copyright {
   margin: 15px 0 0;
 }
+

@@ -2,12 +2,8 @@
   <h1>Редагування профіля</h1>
   <hr>
   <div class="row">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <% if !devise_error_messages!.empty? %>
-            <div id="error_explanation" class=" alert alert-danger">
-          <%= devise_error_messages! %>
-        </div>
-            <% end %>
+    <%= form_for @user, class: 'form-group' do |f| %>
+
         <!-- left column -->
         <div class="col-md-3">
           <div class="text-center">
@@ -31,22 +27,19 @@
           <div class="col-lg-8">
             <%= f.text_field :phone_number, class:'form-control'%>
           </div>
-          <label class="col-lg-3 control-label"> Новий пароль: </label>
+          <label class="col-lg-3 control-label"> Пароль: </label>
           <div class="col-lg-8">
             <%= f.password_field :password, class:'form-control'%>
           </div>
-          <label class="col-lg-3 control-label"> Підтвердження паролю: </label>
+          <label class="col-lg-3 control-label"> Номер телефону: </label>
           <div class="col-lg-8">
             <%= f.password_field :password_confirmation, class:'form-control'%>
-          </div>
-          <label class="col-lg-3 control-label"> Теперішній пароль: </label>
-          <div class="col-lg-8">
-            <%= f.password_field :current_password, class:'form-control'%>
           </div>
           <label class="col-md-3 control-label"></label>
           <div class="col-md-8">
             <%= f.submit 'Зберегти', class: 'btn btn-primary'%>
           </div>
+
         </div>
     <% end %>
   </div>
