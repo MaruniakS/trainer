@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527175657) do
+ActiveRecord::Schema.define(version: 20160531081845) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -200,6 +200,11 @@ ActiveRecord::Schema.define(version: 20160527175657) do
     t.datetime "updated_at",                          null: false
     t.integer  "roles_mask"
     t.string   "slug"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "phone_number"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

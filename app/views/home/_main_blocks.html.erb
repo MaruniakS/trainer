@@ -6,8 +6,8 @@
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
         <h2 class="section-heading"> Готові програми тренувань </h2>
-        <p class="lead">Хочеш набрати м’язеву масу або скинути зайву вагу, але не знаєш, як скласти програму тренувань?
-          Вибери готову програму залежно від поставленої мети. </p>
+        <p class="lead">Хочете набрати м’язеву масу або скинути зайву вагу, але не знаєте, як скласти програму тренувань?
+          Вибирайте готову програму залежно від поставленої мети. </p>
         <%= link_to 'Вибрати', all_programs_path, class: 'btn btn-lg square-btn' %>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6 center-inner">
@@ -28,9 +28,9 @@
       <div id="main-content-2" class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
-        <h2 class="section-heading">Відстежуй прогрес  </h2>
+        <h2 class="section-heading">Відстежуйте прогрес  </h2>
         <p class="lead">
-          Заводь щоденник прогресу в особистому кабінеті для спостереженя за результатами тренувань. Став перед собою нові цілі та досягай їх
+          Заводьте щоденник прогресу в особистому кабінеті для спостереженя за результатами тренувань. Ставте перед собою нові цілі та досягайте їх
         </p>
         <%= link_to 'Завести',user_signed_in? ? user_parameters_path(current_user) : new_user_registration_path, class: 'btn btn-lg square-btn' %>
       </div>
@@ -54,7 +54,7 @@
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
         <h2 class="section-heading">Індивідуальна програма тренувань</h2>
-        <p class="lead">Отримай програму на основі індивідуальних даних, що враховує  особливості організму та рівень підготовленості.
+        <p class="lead">Отримайте програму на основі індивідуальних даних, що враховує  особливості організму та рівень підготовленості.
         </p>
         <%= link_to 'Отримати', individual_program_path, class: 'btn btn-lg square-btn' %>
       </div>

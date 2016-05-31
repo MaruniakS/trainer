@@ -16,8 +16,6 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
       <ul class="nav navbar-nav">
-        <li><a class="nav-link" href="#">Link</a></li>
-        <li><a class="nav-link" href="#">Link</a></li>
         <li class="dropdown mega-dropdown">
           <%= link_to all_programs_path, class: 'nav-link dropdown-toggle  disabled', 'data-toggle' => 'dropdown', 'data-hover' => 'dropdown' do %>
               Програми
@@ -51,8 +49,13 @@
                 <li>
                   <%= link_to 'Особистий кабінет', user_path(current_user) %>
                 </li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to 'Календар тренувань', user_events_path(current_user) %>
+                </li>
+                <li>
+                  <%= link_to 'Щоденник прогресу', user_parameters_path(current_user) %>
+                </li>
                 <li class="divider"></li>
                 <li><%= link_to 'Вийти', destroy_user_session_path, method: :delete %></li>
 
@@ -95,14 +98,13 @@
                       </div>
                     </div>
                     <div class="bottom text-center">
-                      Вперше тут? <%= link_to new_user_registration_path  do %><b> Приєднуйся! </b><%end%>
+                      Вперше тут? <%= link_to new_user_registration_path  do %><b> Приєднуйтеся! </b><%end%>
                     </div>
                   </div>
                 </li>
               </ul>
             </li>
         <% end %>
-        <li><a class="nav-link" href="#">Link</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -1,4 +1,57 @@
-<div class="container main-container">
-  <%= @user.username %>
-  <br>
-</div>
+<section id="user-info">
+  <div class="container main-container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+
+
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title"> <%= @user.username %> </h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+
+              <div class=" col-md-9 col-lg-9 ">
+                <table class="table table-user-information">
+                  <tbody>
+                  <tr>
+                    <td>Email</td>
+                    <td><%= @user.email %></td>
+                  </tr>
+                  <td> Номер телефону </td>
+                  <td> <%= "phone" %>
+                  </td>
+
+                  </tr>
+                  <tr>
+                    <td>Кількість програм</td>
+                    <td> <%= @user.training_programs.count%></td>
+                  </tr>
+                  <tr>
+                    <td> Права користувача:</td>
+                    <td><%= @user.roles.join(', ').humanize %></td>
+                  </tr>
+
+
+                  </tbody>
+                </table>
+                <%= link_to 'Щоденник прогресу', user_parameters_path(@user), class: 'btn btn-primary'%>
+                <%= link_to 'Календар тренувань', user_events_path(@user), class: 'btn btn-primary'%>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary disabled"><i class="glyphicon glyphicon-envelope"></i></a>
+                        <span class="pull-right">
+                            <%= link_to edit_user_path(@user), class: 'btn btn-sm btn-warning', 'data-toggle' => 'tooltip', 'data-original-title' => 'Редагувати профіль' do %>
+                              <i class="glyphicon glyphicon-edit"></i>
+                            <% end %>
+                        </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
