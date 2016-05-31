@@ -21,6 +21,13 @@ class User < ActiveRecord::Base
                 with: /^[a-zA-Z0-9_\.]*$/,
                 :multiline => true
             }
+  has_attached_file :avatar,
+                    :path => ':rails_root/public/system/:attachment/:id/:basename_:style.:extension',
+                    :url => '/system/:attachment/:id/:basename_:style.:extension',
+                    :default_url => '/images/no-image.jpg'
+  validates_attachment :avatar,
+                       :size => { :in => 0..10.megabytes },
+                       :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/ }
   # Include default devise modules. Others available are:
   #:lockable, :timeoutable :validatable,
   devise :database_authenticatable, :registerable, :confirmable,
