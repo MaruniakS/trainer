@@ -48,8 +48,8 @@
       </div>
   <% end %>
   <% unless @analogs.empty? %>
-      <div class="container">
-        <div class="row">
+      <div class="container" id="analogs">
+        <div class="row" id="exercise-list">
           <h3> Вправи-аналоги </h3>
           <%= render partial: 'exercises_list', locals: {exercises: @analogs} %>
         </div>
